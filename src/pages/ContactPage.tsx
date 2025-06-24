@@ -79,7 +79,7 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Contact & Book Appointment
+              Contact & Request Appointment
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Ready to start your pet's healing journey? Schedule a consultation 
@@ -105,8 +105,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                      <p className="text-gray-600">(555) 123-PAWS</p>
-                      <p className="text-sm text-gray-500">Mon-Fri: 8AM-6PM</p>
+                      <p className="text-gray-600">(706) 897 - 6897</p>
+                      <p className="text-sm text-gray-500">Call or Text</p>
                     </div>
                   </div>
 
@@ -115,9 +115,10 @@ const ContactPage = () => {
                       <Mail className="h-6 w-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <p className="text-gray-600">info@pawpowerrehab.com</p>
-                      <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                      <h3 className="font-semibold text-gray-900 mb-1">Emails</h3>
+                      <p className="text-gray-600">Drjackson@pawpowerrehab.com</p>
+                      <p className="text-gray-600">Admin@pawpowerrehab.com</p>
+                      <p className="text-sm text-gray-500">We will respond within 24 hours</p>
                     </div>
                   </div>
 
@@ -127,8 +128,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                      <p className="text-gray-600">123 Healing Lane<br />Pet City, PC 12345</p>
-                      <p className="text-sm text-gray-500">Easy parking available</p>
+                      <p className="text-gray-600">Cohutta Animal Clinic<br />24 Lance Street<br />Blue Ridge, GA 30513</p>
                     </div>
                   </div>
 
@@ -139,9 +139,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Hours</h3>
                       <div className="text-gray-600 text-sm">
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 4:00 PM</p>
-                        <p>Sunday: Emergency Only</p>
+                        <p>By Appointment Only</p>
                       </div>
                     </div>
                   </div>
@@ -160,7 +158,7 @@ const ContactPage = () => {
             {/* Appointment Form */}
             <div className="lg:col-span-2">
               <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Schedule an Appointment</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-8">Request an Appointment</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Information */}
@@ -176,7 +174,7 @@ const ContactPage = () => {
                         required
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
                     </div>
                     <div>
@@ -190,7 +188,7 @@ const ContactPage = () => {
                         required
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
                     </div>
                   </div>
@@ -207,7 +205,7 @@ const ContactPage = () => {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
                     </div>
                     <div>
@@ -221,7 +219,7 @@ const ContactPage = () => {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
                     </div>
                   </div>
@@ -242,7 +240,7 @@ const ContactPage = () => {
                           required
                           value={formData.petName}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                         />
                       </div>
                       <div>
@@ -255,7 +253,7 @@ const ContactPage = () => {
                           required
                           value={formData.petType}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                         >
                           <option value="">Select pet type</option>
                           <option value="dog">Dog</option>
@@ -275,16 +273,16 @@ const ContactPage = () => {
                         required
                         value={formData.concern}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       >
                         <option value="">Select primary concern</option>
                         <option value="post-surgery">Post-Surgical Recovery</option>
                         <option value="arthritis">Arthritis/Joint Pain</option>
-                        <option value="hip-dysplasia">Hip Dysplasia</option>
+                        <option value="hip-dysplasia">Hip/Elbow Dysplasia</option>
                         <option value="injury">Injury/Trauma</option>
                         <option value="mobility">Mobility Issues</option>
                         <option value="pain-management">Pain Management</option>
-                        <option value="senior-care">Senior Pet Care</option>
+                        <option value="pain-management">Neurological</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -294,8 +292,8 @@ const ContactPage = () => {
                   <div className="border-t border-gray-200 pt-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Appointment Preferences</h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+                      <div className="flex flex-col">
                         <label htmlFor="appointmentType" className="block text-sm font-medium text-gray-700 mb-2">
                           Appointment Type *
                         </label>
@@ -305,7 +303,7 @@ const ContactPage = () => {
                           required
                           value={formData.appointmentType}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                         >
                           <option value="">Select type</option>
                           <option value="consultation">Initial Consultation</option>
@@ -314,7 +312,7 @@ const ContactPage = () => {
                           <option value="follow-up">Follow-up Visit</option>
                         </select>
                       </div>
-                      <div>
+                      <div className="flex flex-col">
                         <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 mb-2">
                           Preferred Date
                         </label>
@@ -324,25 +322,8 @@ const ContactPage = () => {
                           name="preferredDate"
                           value={formData.preferredDate}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                         />
-                      </div>
-                      <div>
-                        <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700 mb-2">
-                          Preferred Time
-                        </label>
-                        <select
-                          id="preferredTime"
-                          name="preferredTime"
-                          value={formData.preferredTime}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                        >
-                          <option value="">Select time</option>
-                          <option value="morning">Morning (8AM-12PM)</option>
-                          <option value="afternoon">Afternoon (12PM-5PM)</option>
-                          <option value="evening">Evening (5PM-6PM)</option>
-                        </select>
                       </div>
                     </div>
                   </div>
@@ -409,34 +390,18 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Visit Our Clinic</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Our modern facility is designed with your pet's comfort in mind. 
-                We're conveniently located with easy access and ample parking.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Clinic Location</h2>
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-blue-600" />
-                  <span className="font-medium">123 Healing Lane, Pet City, PC 12345</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-emerald-600" />
-                  <span>Easy scheduling with flexible appointment times</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-amber-600" />
-                  <span>Free parking available on-site</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-purple-600" />
-                  <span>Wheelchair and pet-friendly accessibility</span>
+                  <span className="font-medium">24 Lance Street Blue Ridge, GA 30513</span>
                 </div>
               </div>
 
               <div className="mt-8">
                 <a
-                  href="https://maps.google.com"
+                  href="https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold"
@@ -451,7 +416,7 @@ const ContactPage = () => {
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-600">Interactive map would be embedded here</p>
-                <p className="text-sm text-gray-500 mt-2">123 Healing Lane, Pet City, PC 12345</p>
+                <p className="text-sm text-gray-500 mt-2">24 Lance Street Blue Ridge, GA 30513</p>
               </div>
             </div>
           </div>

@@ -6,8 +6,8 @@ const HomePage = () => {
   const services = [
     {
       icon: Heart,
-      title: 'Hydrotherapy',
-      description: 'Low-impact water therapy for joint recovery and muscle strengthening'
+      title: 'Dry Needling',
+      description: 'A targeted technique using fine needles to relieve muscle pain, reduce inflammation, and promote healing in injured tissues.'
     },
     {
       icon: Award,
@@ -26,83 +26,67 @@ const HomePage = () => {
       name: 'Sarah Johnson',
       pet: 'Golden Retriever - Max',
       text: 'The therapy sessions helped Max recover completely from his hip surgery. The staff is incredibly caring and professional.',
-      rating: 5
+      rating: 5,
+      photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
-    {
-      name: 'Michael Chen',
-      pet: 'German Shepherd - Luna',
-      text: 'Luna\'s mobility improved dramatically after just a few weeks. We couldn\'t be happier with the results.',
-      rating: 5
-    },
-    {
-      name: 'Emily Rodriguez',
-      pet: 'Labrador Mix - Buddy',
-      text: 'The team at Paw Power gave Buddy his quality of life back. Their expertise and compassion are unmatched.',
-      rating: 5
-    }
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-emerald-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 py-20 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl font-bold leading-tight text-gray-900 lg:text-6xl">
                   Healing Your Pet,
                   <span className="text-blue-600"> One Step</span> at a Time
                 </h1>
-                <p className="text-xl text-gray-600 mt-6 leading-relaxed">
+                <p className="mt-6 text-xl leading-relaxed text-gray-600">
                   Expert physical therapy and rehabilitation services to help your beloved companion 
                   recover from injury, surgery, or chronic conditions with compassionate, professional care.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
                   to="/contact"
-                  className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="px-8 py-4 font-semibold text-center text-white transition-all duration-300 transform bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
                 >
                   Schedule Consultation
                 </Link>
                 <Link
                   to="/services"
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 font-semibold text-center"
+                  className="px-8 py-4 font-semibold text-center text-blue-600 transition-all duration-300 border-2 border-blue-600 rounded-full hover:bg-blue-600 hover:text-white"
                 >
                   View Services
                 </Link>
               </div>
 
-              <div className="flex items-center space-x-8 pt-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">500+</div>
-                  <div className="text-sm text-gray-600">Pets Helped</div>
+              <div className="flex items-center w-full mt-20 space-x-8">
+                <div className="flex flex-col items-center justify-center w-full px-8 py-4 transition-transform duration-300 border-2 shadow-xl bg-gradient-to-br from-emerald-100 to-blue-50 rounded-2xl border-emerald-300 hover:shadow-2xl">
+                  <div className="flex items-center justify-center w-full mb-1">
+                    <Award className="w-8 h-8 mr-2 text-emerald-600 drop-shadow-lg" />
+                    <span className="text-4xl font-extrabold text-emerald-700 drop-shadow">10+</span>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-emerald-600">15+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-600">98%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
+                  <div className="text-base font-semibold tracking-wide text-emerald-800">Years Experience</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="overflow-hidden shadow-2xl aspect-w-4 aspect-h-3 rounded-2xl">
                 <img
                   src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Happy golden retriever receiving physical therapy"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute p-6 bg-white shadow-xl -bottom-6 -left-6 rounded-2xl">
                 <div className="flex items-center space-x-3">
-                  <div className="bg-emerald-100 p-3 rounded-full">
-                    <Heart className="h-6 w-6 text-emerald-600" />
+                  <div className="p-3 rounded-full bg-emerald-100">
+                    <Heart className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Certified Therapy</div>
@@ -117,42 +101,42 @@ const HomePage = () => {
 
       {/* Services Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
               Comprehensive Therapy Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto text-xl text-gray-600">
               We offer a full range of evidence-based physical therapy treatments 
               tailored to your pet's specific needs and recovery goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group"
+                  className="p-8 transition-all duration-300 bg-white border border-gray-100 shadow-lg rounded-2xl hover:shadow-xl hover:border-blue-200 group"
                 >
-                  <div className="bg-blue-100 p-4 rounded-2xl w-fit mb-6 group-hover:bg-blue-200 transition-colors">
-                    <Icon className="h-8 w-8 text-blue-600" />
+                  <div className="p-4 mb-6 transition-colors bg-blue-100 rounded-2xl w-fit group-hover:bg-blue-200">
+                    <Icon className="w-8 h-8 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <h3 className="mb-4 text-xl font-semibold text-gray-900">{service.title}</h3>
+                  <p className="leading-relaxed text-gray-600">{service.description}</p>
                 </div>
               );
             })}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="mt-12 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold"
+              className="inline-flex items-center space-x-2 font-semibold text-blue-600 hover:text-blue-700"
             >
               <span>View All Services</span>
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -160,14 +144,14 @@ const HomePage = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
                   Why Pet Owners Trust Paw Power
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg leading-relaxed text-gray-600">
                   Our commitment to excellence, combined with genuine love for animals, 
                   makes us the preferred choice for pet rehabilitation in the region.
                 </p>
@@ -175,8 +159,8 @@ const HomePage = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-emerald-100 p-2 rounded-full">
-                    <Award className="h-6 w-6 text-emerald-600" />
+                  <div className="p-2 rounded-full bg-emerald-100">
+                    <Award className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Certified Specialists</h3>
@@ -184,8 +168,8 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-2 rounded-full">
-                    <Heart className="h-6 w-6 text-blue-600" />
+                  <div className="p-2 bg-blue-100 rounded-full">
+                    <Heart className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Personalized Care</h3>
@@ -193,8 +177,8 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-amber-100 p-2 rounded-full">
-                    <Clock className="h-6 w-6 text-amber-600" />
+                  <div className="p-2 rounded-full bg-amber-100">
+                    <Clock className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Proven Results</h3>
@@ -251,25 +235,25 @@ const HomePage = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white lg:text-4xl">
               Ready to Start Your Pet's Healing Journey?
             </h2>
             <p className="text-xl text-blue-100">
               Schedule a consultation today and let our expert team create a personalized 
               treatment plan for your beloved companion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 to="/contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-8 py-4 font-semibold text-blue-600 transition-all duration-300 transform bg-white rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
               >
                 Book Consultation
               </Link>
               <Link
                 to="/faq"
-                className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 font-semibold"
+                className="px-8 py-4 font-semibold text-white transition-all duration-300 border-2 border-white rounded-full hover:bg-white hover:text-blue-600"
               >
                 Learn More
               </Link>
