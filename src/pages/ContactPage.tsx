@@ -55,13 +55,13 @@ const ContactPage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="pt-20 min-h-screen bg-gradient-to-br from-blue-50 to-emerald-50 flex items-center justify-center">
-        <div className="bg-white p-12 rounded-2xl shadow-xl text-center max-w-md">
-          <div className="bg-emerald-100 p-4 rounded-full w-fit mx-auto mb-6">
-            <CheckCircle className="h-12 w-12 text-emerald-600" />
+      <div className="flex items-center justify-center min-h-screen pt-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="max-w-md p-12 text-center bg-white shadow-xl rounded-2xl">
+          <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
+            <CheckCircle className="w-12 h-12 text-emerald-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900">Thank You!</h2>
+          <p className="mb-6 text-gray-600">
             We've received your appointment request and will contact you within 24 hours to confirm your booking.
           </p>
           <p className="text-sm text-gray-500">
@@ -73,15 +73,15 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-emerald-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               Contact & Request Appointment
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
               Ready to start your pet's healing journey? Schedule a consultation 
               with our expert team or get in touch with any questions.
             </p>
@@ -91,62 +91,87 @@ const ContactPage = () => {
 
       {/* Contact Information & Form */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Contact Information */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 p-8 rounded-2xl">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Get In Touch</h2>
+              <div className="p-8 bg-gray-50 rounded-2xl">
+                <h2 className="mb-8 text-2xl font-bold text-gray-900">Get In Touch</h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-blue-600" />
+                    <div className="p-3 bg-blue-100 rounded-full">
+                      <Phone className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                      <p className="text-gray-600">(706) 897 - 6897</p>
+                      <h3 className="mb-1 font-semibold text-gray-900">Phone</h3>
+                        <p className="text-gray-600">
+                        <a href="tel:7068976897" className="hover:underline">
+                          (706) 897 - 6897
+                        </a>
+                        </p>
                       <p className="text-sm text-gray-500">Call or Text</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-emerald-100 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-emerald-600" />
+                    <div className="p-3 rounded-full bg-emerald-100">
+                      <Mail className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Emails</h3>
-                      <p className="text-gray-600">Drjackson@pawpowerrehab.com</p>
-                      <p className="text-gray-600">Admin@pawpowerrehab.com</p>
+                      <h3 className="mb-1 font-semibold text-gray-900">Emails</h3>
+                        <p>
+                          <a href="mailto:Drjackson@pawpowerrehab.com" className="text-gray-600 hover:underline">
+                            Drjackson@pawpowerrehab.com
+                          </a>
+                          <br />
+                          <a href="mailto:Admin@pawpowerrehab.com" className="text-gray-600 hover:underline">
+                            Admin@pawpowerrehab.com
+                          </a>
+                        </p>
                       <p className="text-sm text-gray-500">We will respond within 24 hours</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-amber-100 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-amber-600" />
+                    <div className="p-3 rounded-full bg-amber-100">
+                      <MapPin className="w-6 h-6 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                      <p className="text-gray-600">Cohutta Animal Clinic<br />24 Lance Street<br />Blue Ridge, GA 30513</p>
+                      <h3 className="mb-1 font-semibold text-gray-900">Location</h3>
+                      <p className="text-gray-600">
+                        Cohutta Animal Clinic<br />
+                        <a
+                          href={
+                            /iPhone|iPad|iPod/i.test(navigator.userAgent)
+                              ? "maps://maps.apple.com/?q=24+Lance+Street+Blue+Ridge+GA+30513"
+                              : "https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu"
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          24 Lance Street<br />Blue Ridge, GA 30513
+                        </a>
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-purple-100 p-3 rounded-full">
-                      <Clock className="h-6 w-6 text-purple-600" />
+                    <div className="p-3 bg-purple-100 rounded-full">
+                      <Clock className="w-6 h-6 text-purple-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Hours</h3>
-                      <div className="text-gray-600 text-sm">
+                      <h3 className="mb-1 font-semibold text-gray-900">Hours</h3>
+                      <div className="text-sm text-gray-600">
                         <p>By Appointment Only</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-blue-50 rounded-xl">
-                  <h4 className="font-semibold text-blue-900 mb-2">Emergency Situations</h4>
+                <div className="p-4 mt-8 bg-blue-50 rounded-xl">
+                  <h4 className="mb-2 font-semibold text-blue-900">Emergency Situations</h4>
                   <p className="text-sm text-blue-700">
                     For after-hours emergencies, please contact your primary veterinarian 
                     or nearest emergency clinic.
@@ -157,14 +182,14 @@ const ContactPage = () => {
 
             {/* Appointment Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Request an Appointment</h2>
+              <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
+                <h2 className="mb-8 text-2xl font-bold text-gray-900">Request an Appointment</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Information */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-gray-700">
                         First Name *
                       </label>
                       <input
@@ -178,7 +203,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="lastName" className="block mb-2 text-sm font-medium text-gray-700">
                         Last Name *
                       </label>
                       <input
@@ -193,9 +218,9 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
                         Email Address *
                       </label>
                       <input
@@ -209,7 +234,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">
                         Phone Number *
                       </label>
                       <input
@@ -225,12 +250,12 @@ const ContactPage = () => {
                   </div>
 
                   {/* Pet Information */}
-                  <div className="border-t border-gray-200 pt-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Pet Information</h3>
+                  <div className="pt-6 border-t border-gray-200">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-900">Pet Information</h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                       <div>
-                        <label htmlFor="petName" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="petName" className="block mb-2 text-sm font-medium text-gray-700">
                           Pet's Name *
                         </label>
                         <input
@@ -244,7 +269,7 @@ const ContactPage = () => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="petType" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="petType" className="block mb-2 text-sm font-medium text-gray-700">
                           Pet Type *
                         </label>
                         <select
@@ -264,7 +289,7 @@ const ContactPage = () => {
                     </div>
 
                     <div className="mt-6">
-                      <label htmlFor="concern" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="concern" className="block mb-2 text-sm font-medium text-gray-700">
                         Primary Concern/Condition *
                       </label>
                       <select
@@ -289,12 +314,12 @@ const ContactPage = () => {
                   </div>
 
                   {/* Appointment Details */}
-                  <div className="border-t border-gray-200 pt-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Appointment Preferences</h3>
+                  <div className="pt-6 border-t border-gray-200">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-900">Appointment Preferences</h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+                    <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
                       <div className="flex flex-col">
-                        <label htmlFor="appointmentType" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="appointmentType" className="block mb-2 text-sm font-medium text-gray-700">
                           Appointment Type *
                         </label>
                         <select
@@ -313,7 +338,7 @@ const ContactPage = () => {
                         </select>
                       </div>
                       <div className="flex flex-col">
-                        <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="preferredDate" className="block mb-2 text-sm font-medium text-gray-700">
                           Preferred Date
                         </label>
                         <input
@@ -330,7 +355,7 @@ const ContactPage = () => {
 
                   {/* Additional Information */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">
                       Additional Information
                     </label>
                     <textarea
@@ -340,12 +365,12 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Please share any additional details about your pet's condition, current medications, or specific concerns..."
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     ></textarea>
                   </div>
 
                   <div>
-                    <label htmlFor="hearAboutUs" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="hearAboutUs" className="block mb-2 text-sm font-medium text-gray-700">
                       How did you hear about us?
                     </label>
                     <select
@@ -353,7 +378,7 @@ const ContactPage = () => {
                       name="hearAboutUs"
                       value={formData.hearAboutUs}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="">Select an option</option>
                       <option value="veterinarian">Veterinarian Referral</option>
@@ -369,12 +394,12 @@ const ContactPage = () => {
                   <div className="pt-6">
                     <button
                       type="submit"
-                      className="w-full bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
+                      className="flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
                     >
-                      <Send className="h-5 w-5" />
+                      <Send className="w-5 h-5" />
                       <span>Submit Appointment Request</span>
                     </button>
-                    <p className="text-sm text-gray-500 text-center mt-3">
+                    <p className="mt-3 text-sm text-center text-gray-500">
                       We'll contact you within 24 hours to confirm your appointment
                     </p>
                   </div>
@@ -387,14 +412,14 @@ const ContactPage = () => {
 
       {/* Map & Directions */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Clinic Location</h2>
+              <h2 className="mb-6 text-3xl font-bold text-gray-900">Clinic Location</h2>
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-600" />
+                  <MapPin className="w-5 h-5 text-blue-600" />
                   <span className="font-medium">24 Lance Street Blue Ridge, GA 30513</span>
                 </div>
               </div>
@@ -404,19 +429,19 @@ const ContactPage = () => {
                   href="https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold"
+                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
                 >
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="w-4 h-4" />
                   <span>Get Directions</span>
                 </a>
               </div>
             </div>
 
-            <div className="bg-gray-200 h-96 rounded-2xl flex items-center justify-center">
+            <div className="flex items-center justify-center bg-gray-200 h-96 rounded-2xl">
               <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                <MapPin className="w-12 h-12 mx-auto mb-4 text-gray-400" />
                 <p className="text-gray-600">Interactive map would be embedded here</p>
-                <p className="text-sm text-gray-500 mt-2">24 Lance Street Blue Ridge, GA 30513</p>
+                <p className="mt-2 text-sm text-gray-500">24 Lance Street Blue Ridge, GA 30513</p>
               </div>
             </div>
           </div>

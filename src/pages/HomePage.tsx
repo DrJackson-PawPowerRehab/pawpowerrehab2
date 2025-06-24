@@ -27,7 +27,7 @@ const HomePage = () => {
       pet: 'Golden Retriever - Max',
       text: 'The therapy sessions helped Max recover completely from his hip surgery. The staff is incredibly caring and professional.',
       rating: 5,
-      photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800'
+      photo: 'openart-image_zBHZwxyl_1750798820686_raw.png'
     },
   ];
 
@@ -164,7 +164,7 @@ const HomePage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Certified Specialists</h3>
-                    <p className="text-gray-600">Licensed veterinary physical therapists with advanced training</p>
+                    <p className="text-gray-600">Licensed physical therapists with advanced training</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -200,35 +200,35 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              What Pet Parents Say
-            </h2>
-            <p className="text-xl text-gray-600">
-              Real stories from families whose pets we've helped heal and thrive
-            </p>
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-emerald-50 to-white">
+        <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+        <h2 className="mb-2 text-3xl font-bold lg:text-4xl">
+          What Pet Are Parents Saying
+        </h2>
+        <p className="text-lg text-blue-700">
+          Stories from families whose pets we've helped heal
+        </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
-              >
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.pet}</div>
-                </div>
-              </div>
+          <div className="flex justify-center">
+        <div className="flex flex-col items-center w-full max-w-xl p-8 bg-white border border-blue-100 shadow-lg rounded-2xl">
+          <img
+            src={testimonials[0].photo}
+            alt={testimonials[0].name}
+            className="object-cover w-56 h-56 mb-6 border-4 shadow rounded-3xl "
+          />
+          <div className="flex items-center mb-4 space-x-1">
+            {[...Array(testimonials[0].rating)].map((_, i) => (
+          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
             ))}
+          </div>
+          <p className="mb-6 text-lg leading-relaxed text-center text-gray-800">
+            "{testimonials[0].text}"
+          </p>
+          <div className="flex flex-col items-center">
+            <div className="font-semibold text-slate-800">- {testimonials[0].name}</div>
+          </div>
+        </div>
           </div>
         </div>
       </section>
