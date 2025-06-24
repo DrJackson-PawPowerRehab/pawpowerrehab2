@@ -1,80 +1,152 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Heart, Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="text-white bg-gray-900">
+      <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-blue-600 p-2 rounded-full">
-                <Heart className="h-6 w-6 text-white" />
+            <div className="flex items-center mb-4 space-x-3">
+              <div className="p-2 bg-blue-600 rounded-full">
+                <Heart className="w-6 h-6 text-white" />
               </div>
               <div>
                 <div className="text-xl font-bold">Paw Power Rehab</div>
-                <div className="text-blue-400">Expert Animal Physical Therapy</div>
+                <div className="text-blue-400">Animal Physical Therapy</div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Dedicated to helping your beloved pets recover, heal, and thrive through 
-              compassionate, evidence-based physical therapy and rehabilitation services.
+            <p className="max-w-md mb-6 text-gray-300">
+              Our mission is simple: to provide thoughtful, personalized care
+              that helps your pet feel better, move better, and live more fully.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span>(555) 123-PAWS</span>
+                <Phone className="w-5 h-5 text-blue-400" />
+                <span>
+                  <a href="tel:7068976897" className="hover:underline">
+                    (706) 897-6897
+                  </a>
+                </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
-                <span>info@pawpowerrehab.com</span>
+                <Mail className="w-5 h-5 text-blue-400" />
+                <p>
+                  <a
+                    href="mailto:Drjackson@pawpowerrehab.com"
+                    className="hover:underline"
+                  >
+                    Drjackson@pawpowerrehab.com
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:Admin@pawpowerrehab.com"
+                    className="hover:underline"
+                  >
+                    Admin@pawpowerrehab.com
+                  </a>
+                </p>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
-                <span>123 Healing Lane, Pet City, PC 12345</span>
+                <MapPin className="w-5 h-5 text-blue-400" />
+                <p className="">
+                  Cohutta Animal Clinic
+                  <br />
+                  <a
+                    href={
+                      /iPhone|iPad|iPod/i.test(navigator.userAgent)
+                        ? "maps://maps.apple.com/?q=24+Lance+Street+Blue+Ridge+GA+30513"
+                        : "https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    24 Lance Street
+                    <br />
+                    Blue Ridge, GA 30513
+                  </a>
+                </p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-blue-400 transition-colors">Our Services</Link></li>
-              <li><Link to="/blog" className="text-gray-300 hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link to="/faq" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</Link></li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-gray-300 transition-colors hover:text-blue-400"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-300 transition-colors hover:text-blue-400"
+                >
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-gray-300 transition-colors hover:text-blue-400"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/faq"
+                  className="text-gray-300 transition-colors hover:text-blue-400"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-300 transition-colors hover:text-blue-400"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Hours */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
-            <div className="space-y-2 text-gray-300">
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">Monday - Friday</span>
+            <h3 className="mb-4 text-lg font-semibold">
+              Appointment On Request
+            </h3>
+            <div className="space-y-4 text-gray-300">
+              <div className="pt-2">
+                <Link
+                  to="/contact"
+                  className="inline-block px-4 py-2 text-sm font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                >
+                  Book an Appointment
+                </Link>
               </div>
-              <div className="ml-6 text-sm">8:00 AM - 6:00 PM</div>
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">Saturday</span>
-              </div>
-              <div className="ml-6 text-sm">9:00 AM - 4:00 PM</div>
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-blue-400" />
-                <span className="text-sm">Sunday</span>
-              </div>
-              <div className="ml-6 text-sm">Emergency Only</div>
+              <div className="text-sm">All appointments by request</div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Paw Power Rehab. All rights reserved. | Licensed Veterinary Physical Therapy Practice</p>
+        <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800">
+          <p>
+            &copy; 2025 Paw Power Rehab. All rights reserved. | Licensed
+            Veterinary Physical Therapy Practice
+          </p>
         </div>
       </div>
     </footer>
