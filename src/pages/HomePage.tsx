@@ -1,33 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, Award, Users, Clock, ArrowRight, Star } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Heart, Award, Users, Clock, ArrowRight, Star } from "lucide-react";
 
 const HomePage = () => {
   const services = [
     {
       icon: Heart,
-      title: 'Dry Needling',
-      description: 'A targeted technique using fine needles to relieve muscle pain, reduce inflammation, and promote healing in injured tissues.'
+      title: "Dry Needling",
+      description:
+        "A targeted technique using fine needles to relieve muscle pain, reduce inflammation, and promote healing in injured tissues.",
     },
     {
       icon: Award,
-      title: 'Manual Therapy',
-      description: 'Hands-on techniques to improve mobility and reduce pain'
+      title: "Manual Therapy",
+      description: "Hands-on techniques to improve mobility and reduce pain",
     },
     {
       icon: Users,
-      title: 'Exercise Programs',
-      description: 'Customized rehabilitation exercises for optimal recovery'
-    }
+      title: "Exercise Programs",
+      description: "Customized rehabilitation exercises for optimal recovery",
+    },
   ];
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      pet: 'Golden Retriever - Max',
-      text: 'The therapy sessions helped Max recover completely from his hip surgery. The staff is incredibly caring and professional.',
+      name: "Sarah Johnson",
+      pet: "Golden Retriever - Max",
+      text: "The therapy sessions helped Max recover completely from his hip surgery. The staff is incredibly caring and professional.",
       rating: 5,
-      photo: 'openart-image_zBHZwxyl_1750798820686_raw.png'
+      photo: "openart-image_zBHZwxyl_1750798820686_raw.png",
     },
   ];
 
@@ -44,14 +45,15 @@ const HomePage = () => {
                   <span className="text-blue-600"> One Step</span> at a Time
                 </h1>
                 <p className="mt-6 text-xl leading-relaxed text-gray-600">
-                  Expert physical therapy and rehabilitation services to help your beloved companion 
-                  recover from injury, surgery, or chronic conditions with compassionate, professional care.
+                  Expert physical therapy and rehabilitation services to help
+                  your beloved companion recover from injury, surgery, or
+                  chronic conditions with compassionate, professional care.
                 </p>
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  to="/contact"
+                  to="/contact#appointment-section"
                   className="px-8 py-4 font-semibold text-center text-white transition-all duration-300 transform bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
                 >
                   Schedule Consultation
@@ -68,9 +70,13 @@ const HomePage = () => {
                 <div className="flex flex-col items-center justify-center w-full px-8 py-4 transition-transform duration-300 border-2 shadow-xl bg-gradient-to-br from-emerald-100 to-blue-50 rounded-2xl border-emerald-300 hover:shadow-2xl">
                   <div className="flex items-center justify-center w-full mb-1">
                     <Award className="w-8 h-8 mr-2 text-emerald-600 drop-shadow-lg" />
-                    <span className="text-4xl font-extrabold text-emerald-700 drop-shadow">10+</span>
-                </div>
-                  <div className="text-base font-semibold tracking-wide text-emerald-800">Years Experience</div>
+                    <span className="text-4xl font-extrabold text-emerald-700 drop-shadow">
+                      10+
+                    </span>
+                  </div>
+                  <div className="text-base font-semibold tracking-wide text-emerald-800">
+                    Years Experience
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,8 +95,12 @@ const HomePage = () => {
                     <Heart className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Certified Therapy</div>
-                    <div className="text-sm text-gray-600">Licensed Professionals</div>
+                    <div className="font-semibold text-gray-900">
+                      Certified Therapy
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Licensed Professionals
+                    </div>
                   </div>
                 </div>
               </div>
@@ -107,8 +117,9 @@ const HomePage = () => {
               Comprehensive Therapy Services
             </h2>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-              We offer a full range of evidence-based physical therapy treatments 
-              tailored to your pet's specific needs and recovery goals.
+              We offer a full range of evidence-based physical therapy
+              treatments tailored to your pet's specific needs and recovery
+              goals.
             </p>
           </div>
 
@@ -123,8 +134,12 @@ const HomePage = () => {
                   <div className="p-4 mb-6 transition-colors bg-blue-100 rounded-2xl w-fit group-hover:bg-blue-200">
                     <Icon className="w-8 h-8 text-blue-600" />
                   </div>
-                  <h3 className="mb-4 text-xl font-semibold text-gray-900">{service.title}</h3>
-                  <p className="leading-relaxed text-gray-600">{service.description}</p>
+                  <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                    {service.title}
+                  </h3>
+                  <p className="leading-relaxed text-gray-600">
+                    {service.description}
+                  </p>
                 </div>
               );
             })}
@@ -152,8 +167,9 @@ const HomePage = () => {
                   Why Pet Owners Trust Paw Power
                 </h2>
                 <p className="text-lg leading-relaxed text-gray-600">
-                  Our commitment to excellence, combined with genuine love for animals, 
-                  makes us the preferred choice for pet rehabilitation in the region.
+                  Our commitment to excellence, combined with genuine love for
+                  animals, makes us the preferred choice for pet rehabilitation
+                  in the region.
                 </p>
               </div>
 
@@ -163,8 +179,12 @@ const HomePage = () => {
                     <Award className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Certified Specialists</h3>
-                    <p className="text-gray-600">Licensed physical therapists with advanced training</p>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Certified Specialists
+                    </h3>
+                    <p className="text-gray-600">
+                      Licensed physical therapists with advanced training
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -172,8 +192,13 @@ const HomePage = () => {
                     <Heart className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Personalized Care</h3>
-                    <p className="text-gray-600">Individual treatment plans tailored to each pet's unique needs</p>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Personalized Care
+                    </h3>
+                    <p className="text-gray-600">
+                      Individual treatment plans tailored to each pet's unique
+                      needs
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -181,8 +206,12 @@ const HomePage = () => {
                     <Clock className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Proven Results</h3>
-                    <p className="text-gray-600">Track record of successful rehabilitation outcomes</p>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Proven Results
+                    </h3>
+                    <p className="text-gray-600">
+                      Track record of successful rehabilitation outcomes
+                    </p>
                   </div>
                 </div>
               </div>
@@ -203,32 +232,37 @@ const HomePage = () => {
       <section className="py-20 bg-gradient-to-br from-blue-50 via-emerald-50 to-white">
         <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-        <h2 className="mb-2 text-3xl font-bold lg:text-4xl">
-          What Pet Are Parents Saying
-        </h2>
-        <p className="text-lg text-blue-700">
-          Stories from families whose pets we've helped heal
-        </p>
+            <h2 className="mb-2 text-3xl font-bold lg:text-4xl">
+              What Pet Are Parents Saying
+            </h2>
+            <p className="text-lg text-blue-700">
+              Stories from families whose pets we've helped heal
+            </p>
           </div>
           <div className="flex justify-center">
-        <div className="flex flex-col items-center w-full max-w-xl p-8 bg-white border border-blue-100 shadow-lg rounded-2xl">
-          <img
-            src={testimonials[0].photo}
-            alt={testimonials[0].name}
-            className="object-cover w-56 h-56 mb-6 border-4 shadow rounded-3xl "
-          />
-          <div className="flex items-center mb-4 space-x-1">
-            {[...Array(testimonials[0].rating)].map((_, i) => (
-          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <p className="mb-6 text-lg leading-relaxed text-center text-gray-800">
-            "{testimonials[0].text}"
-          </p>
-          <div className="flex flex-col items-center">
-            <div className="font-semibold text-slate-800">- {testimonials[0].name}</div>
-          </div>
-        </div>
+            <div className="flex flex-col items-center w-full max-w-xl p-8 bg-white border border-blue-100 shadow-lg rounded-2xl">
+              <img
+                src={testimonials[0].photo}
+                alt={testimonials[0].name}
+                className="object-cover w-56 h-56 mb-6 border-4 shadow rounded-3xl "
+              />
+              <div className="flex items-center mb-4 space-x-1">
+                {[...Array(testimonials[0].rating)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 text-yellow-400 fill-current"
+                  />
+                ))}
+              </div>
+              <p className="mb-6 text-lg leading-relaxed text-center text-gray-800">
+                "{testimonials[0].text}"
+              </p>
+              <div className="flex flex-col items-center">
+                <div className="font-semibold text-slate-800">
+                  - {testimonials[0].name}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -241,12 +275,12 @@ const HomePage = () => {
               Ready to Start Your Pet's Healing Journey?
             </h2>
             <p className="text-xl text-blue-100">
-              Schedule a consultation today and let our expert team create a personalized 
-              treatment plan for your beloved companion.
+              Schedule a consultation today and let our expert team create a
+              personalized treatment plan for your beloved companion.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact#appointment-section"
                 className="px-8 py-4 font-semibold text-blue-600 transition-all duration-300 transform bg-white rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
               >
                 Book Consultation

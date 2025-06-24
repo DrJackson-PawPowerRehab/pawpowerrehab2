@@ -209,13 +209,17 @@ const ContactPage = () => {
             </div>
 
             {/* Appointment Form */}
-            <div className="lg:col-span-2">
+            <div id="appointment-section" className="lg:col-span-2">
               <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
                 <h2 className="mb-8 text-2xl font-bold text-gray-900">
                   Request an Appointment
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  id="appointment-form"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   {/* Personal Information */}
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>

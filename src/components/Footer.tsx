@@ -128,11 +128,8 @@ const Footer = () => {
             <div className="space-y-4 text-gray-300">
               <div className="pt-2">
                 <Link
-                  to="/contact"
+                  to="/contact#appointment-form"
                   className="inline-block px-4 py-2 text-sm font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
                 >
                   Book an Appointment
                 </Link>
