@@ -4,7 +4,7 @@ import {MousePointerClick, Hand, Dumbbell, Zap, Heart, Clock, CheckCircle } from
 const ServicesPage = () => {
   const services = [
     {
-      icon: MousePointerClick,
+      icon: Heart,
       title: 'Dry Needling',
       description: 'Targeted treatment using fine needles to relieve muscle tension and pain.',
       benefits: [
@@ -56,7 +56,7 @@ const ServicesPage = () => {
       price: 'Starting at $45'
     },
     {
-      icon: Heart,
+      icon: MousePointerClick,
       title: 'Post-Surgical Rehabilitation',
       description: 'Comprehensive recovery programs following orthopedic and neurological surgeries.',
       benefits: [
@@ -86,7 +86,7 @@ const ServicesPage = () => {
   const conditions = [
     'Post-surgical recovery (ACL, hip replacement, spinal surgery)',
     'Arthritis and joint pain',
-    'Hip dysplasia',
+    'Hip / Elbow dysplasia',
     'Spinal cord injuries',
     'Muscle strains and sprains',
     'Neurological conditions',
