@@ -11,7 +11,7 @@ const AboutPage = () => {
       title: "Lead Physical Therapist",
       credentials: "PT, DPT, Cert. DN, Cert. SMT",
       image: "",
-      bio: "With over a decade of experience in physical therapy, Dr. Jackson specializes in rehabilitation. He brings his passion for animal welfare drives and is committed to providing the highest quality care for pets in need of rehabilitation.",
+      bio: "With over a decade of experience in physical therapy, Dr. Jackson specializes in rehabilitation. He is driven by his passion for animal welfare and is committed to providing the highest quality care for pets in need of rehabilitation.",
     },
   ];
 
