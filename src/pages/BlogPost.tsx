@@ -112,15 +112,15 @@ const BlogPost = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Back Button */}
-      <div className="bg-gray-50 py-6">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-6 bg-gray-50">
+        <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
           <Link 
             to="/blog" 
-            className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium"
+            className="inline-flex items-center space-x-2 font-medium text-blue-600 hover:text-blue-700"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="w-4 h-4" />
             <span>Back to Blog</span>
           </Link>
         </div>
@@ -132,15 +132,15 @@ const BlogPost = () => {
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-64 md:h-96 object-cover"
+            className="object-cover w-full h-64 md:h-96"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          <div className="absolute bottom-8 left-0 right-0">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="absolute left-0 right-0 bottom-8">
+            <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
+              <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-white bg-blue-600 rounded-full">
                 {post.category}
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h1 className="text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
                 {post.title}
               </h1>
             </div>
@@ -148,25 +148,25 @@ const BlogPost = () => {
         </div>
 
         {/* Article Meta */}
-        <div className="bg-gray-50 py-6">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-6 bg-gray-50">
+          <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center space-x-6 text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <User className="h-4 w-4" />
+                  <User className="w-4 h-4" />
                   <span>{post.author}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="w-4 h-4" />
                   <span>{new Date(post.date).toLocaleDateString()}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
               </div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium">
-                <Share2 className="h-4 w-4" />
+              <button className="flex items-center space-x-2 font-medium text-blue-600 hover:text-blue-700">
+                <Share2 className="w-4 h-4" />
                 <span>Share</span>
               </button>
             </div>
@@ -175,22 +175,22 @@ const BlogPost = () => {
 
         {/* Article Content */}
         <div className="py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
             <div className="prose prose-lg max-w-none">
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
             {/* Tags */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex items-center space-x-2 mb-4">
-                <Tag className="h-4 w-4 text-gray-400" />
+            <div className="pt-8 mt-12 border-t border-gray-200">
+              <div className="flex items-center mb-4 space-x-2">
+                <Tag className="w-4 h-4 text-gray-400" />
                 <span className="text-sm font-medium text-gray-600">Tags:</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
+                    className="px-3 py-1 text-sm text-blue-700 bg-blue-100 rounded-full"
                   >
                     {tag}
                   </span>
@@ -203,18 +203,18 @@ const BlogPost = () => {
 
       {/* Author Bio */}
       <section className="py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+        <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="p-8 bg-white shadow-lg rounded-2xl">
             <div className="flex items-start space-x-6">
               <img
                 src="https://images.pexels.com/photos/4269505/pexels-photo-4269505.jpeg?auto=compress&cs=tinysrgb&w=200"
                 alt="Dr. Sarah Mitchell"
-                className="w-20 h-20 rounded-full object-cover"
+                className="object-cover w-20 h-20 rounded-full"
               />
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Sarah Mitchell</h3>
-                <p className="text-blue-600 font-medium mb-3">Lead Veterinary Physical Therapist</p>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Dr. Sarah Mitchell</h3>
+                <p className="mb-3 font-medium text-blue-600">Lead Veterinary Physical Therapist</p>
+                <p className="leading-relaxed text-gray-600">
                   Dr. Mitchell has over 15 years of experience in veterinary medicine and rehabilitation. 
                   She founded Paw Power Rehab to provide comprehensive therapy services for pets 
                   recovering from injury and surgery. She holds certifications in canine rehabilitation 
@@ -228,26 +228,26 @@ const BlogPost = () => {
 
       {/* Related Posts */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Related Articles</h2>
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900">Related Articles</h2>
             <p className="text-gray-600">Continue reading for more pet health and rehabilitation insights</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {relatedPosts.map((relatedPost, index) => (
               <Link
                 key={index}
                 to={`/blog/${relatedPost.slug}`}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl"
               >
                 <img
                   src={relatedPost.image}
                   alt={relatedPost.title}
-                  className="w-full h-48 object-cover"
+                  className="object-cover w-full h-48"
                 />
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 leading-tight hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-semibold leading-tight text-gray-900 transition-colors hover:text-blue-600">
                     {relatedPost.title}
                   </h3>
                 </div>
@@ -259,25 +259,25 @@ const BlogPost = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white lg:text-4xl">
               Questions About Your Pet's Recovery?
             </h2>
             <p className="text-xl text-blue-100">
               Our experienced team is here to help guide you through every step 
               of your pet's rehabilitation journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 to="/contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-8 py-4 font-semibold text-blue-600 transition-all duration-300 transform bg-white rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
               >
                 Schedule Consultation
               </Link>
               <Link
                 to="/faq"
-                className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 font-semibold"
+                className="px-8 py-4 font-semibold text-white transition-all duration-300 border-2 border-white rounded-full hover:bg-white hover:text-blue-600"
               >
                 View FAQ
               </Link>

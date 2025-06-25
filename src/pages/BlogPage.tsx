@@ -84,15 +84,15 @@ const BlogPage = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-emerald-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               Pet Health & Rehabilitation Blog
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
               Expert insights, practical tips, and the latest information about 
               pet rehabilitation, wellness, and recovery from our experienced team.
             </p>
@@ -102,50 +102,50 @@ const BlogPage = () => {
 
       {/* Featured Post */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Article</h2>
+            <h2 className="mb-8 text-2xl font-bold text-gray-900">Featured Article</h2>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="overflow-hidden bg-white shadow-xl rounded-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative">
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-64 lg:h-full object-cover"
+                  className="object-cover w-full h-64 lg:h-full"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 text-sm font-medium text-white bg-blue-600 rounded-full">
                     {featuredPost.category}
                   </span>
                 </div>
               </div>
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
+              <div className="flex flex-col justify-center p-8 lg:p-12">
                 <div className="space-y-4">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-2xl font-bold leading-tight text-gray-900 lg:text-3xl">
                     {featuredPost.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="leading-relaxed text-gray-600">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center space-x-6 text-sm text-gray-500">
                     <div className="flex items-center space-x-2">
-                      <User className="h-4 w-4" />
+                      <User className="w-4 h-4" />
                       <span>{featuredPost.author}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Calendar className="h-4 w-4" />
+                      <Calendar className="w-4 h-4" />
                       <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
                     </div>
                     <span>{featuredPost.readTime}</span>
                   </div>
                   <Link
                     to={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold"
+                    className="inline-flex items-center space-x-2 font-semibold text-blue-600 hover:text-blue-700"
                   >
                     <span>Read Full Article</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -156,8 +156,8 @@ const BlogPage = () => {
 
       {/* Categories */}
       <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3 justify-center">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category, index) => (
               <button
                 key={index}
@@ -176,46 +176,46 @@ const BlogPage = () => {
 
       {/* Blog Posts Grid */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900">Recent Articles</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
               <article
                 key={post.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl"
               >
                 <div className="relative">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-48 object-cover"
+                    className="object-cover w-full h-48"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="px-3 py-1 text-sm font-medium text-white rounded-full bg-emerald-600">
                       {post.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
+                  <h3 className="mb-3 text-lg font-semibold leading-tight text-gray-900">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
                     {post.excerpt}
                   </p>
                   
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-4 text-xs text-gray-500">
                       <div className="flex items-center space-x-2">
-                        <User className="h-3 w-3" />
+                        <User className="w-3 h-3" />
                         <span>{post.author}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-3 w-3" />
+                        <Calendar className="w-3 h-3" />
                         <span>{new Date(post.date).toLocaleDateString()}</span>
                       </div>
                     </div>
@@ -224,10 +224,10 @@ const BlogPage = () => {
                   
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium text-sm"
+                    className="inline-flex items-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-700"
                   >
                     <span>Read More</span>
-                    <ArrowRight className="h-3 w-3" />
+                    <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </article>
@@ -235,8 +235,8 @@ const BlogPage = () => {
           </div>
 
           {/* Load More Button */}
-          <div className="text-center mt-12">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold">
+          <div className="mt-12 text-center">
+            <button className="px-8 py-3 font-semibold text-white transition-colors duration-200 bg-blue-600 rounded-full hover:bg-blue-700">
               Load More Articles
             </button>
           </div>
@@ -245,22 +245,22 @@ const BlogPage = () => {
 
       {/* Newsletter Signup */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white lg:text-4xl">
               Stay Updated with Pet Health Tips
             </h2>
             <p className="text-xl text-blue-100">
               Subscribe to our newsletter for the latest articles, rehabilitation tips, 
               and expert advice delivered directly to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <div className="flex flex-col justify-center max-w-md gap-4 mx-auto sm:flex-row">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-full border border-transparent focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-20 outline-none"
+                className="flex-1 px-6 py-3 border border-transparent rounded-full outline-none focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-20"
               />
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-200 font-semibold">
+              <button className="px-8 py-3 font-semibold text-blue-600 transition-colors duration-200 bg-white rounded-full hover:bg-gray-100">
                 Subscribe
               </button>
             </div>

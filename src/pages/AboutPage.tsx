@@ -1,67 +1,61 @@
-import React from 'react';
-import { Award, Heart, Users, BookOpen } from 'lucide-react';
+import React from "react";
+import { Award, Heart, Users, BookOpen } from "lucide-react";
+// Import images to ensure proper bundling
+import clinicImage from "/openart-image_P4_BeiZw_1750798712020_raw.png";
+import dogImage from "/openart-image_Wo-j3pil_1750798839504_raw.png";
 
 const AboutPage = () => {
   const team = [
     {
-      name: 'Dr. Sarah Mitchell',
-      title: 'Lead Veterinary Physical Therapist',
-      credentials: 'DVM, CCRT, PhD in Animal Rehabilitation',
-      image: 'https://images.pexels.com/photos/4269505/pexels-photo-4269505.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'With over 15 years of experience in veterinary medicine and rehabilitation, Dr. Mitchell founded Paw Power to provide comprehensive therapy services for pets in need.'
+      name: "Dr. Thomas Jackson",
+      title: "Lead Physical Therapist",
+      credentials: "PT, DPT, Cert. DN, Cert. SMT",
+      image: "",
+      bio: "With over a decade of experience in physical therapy, Dr. Jackson specializes in rehabilitation. He is driven by his passion for animal welfare and is committed to providing the highest quality care for pets in need of rehabilitation.",
     },
-    {
-      name: 'Jessica Thompson',
-      title: 'Certified Canine Therapist',
-      credentials: 'CCRT, MS in Animal Science',
-      image: 'https://images.pexels.com/photos/4269724/pexels-photo-4269724.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Jessica specializes in hydrotherapy and manual therapy techniques, helping pets of all sizes recover from injuries and maintain optimal mobility.'
-    },
-    {
-      name: 'Mark Rodriguez',
-      title: 'Rehabilitation Specialist',
-      credentials: 'CCRP, Licensed Physical Therapist',
-      image: 'https://images.pexels.com/photos/4269728/pexels-photo-4269728.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Mark brings human physical therapy expertise to animal rehabilitation, developing innovative exercise programs for complex recovery cases.'
-    }
   ];
 
   const values = [
     {
       icon: Heart,
-      title: 'Compassionate Care',
-      description: 'Every pet receives individual attention with genuine love and understanding throughout their healing journey.'
+      title: "Compassionate Care",
+      description:
+        "Every pet receives individual attention with genuine love and understanding throughout their healing journey.",
     },
     {
       icon: Award,
-      title: 'Clinical Excellence',
-      description: 'We maintain the highest standards of veterinary physical therapy through continuous education and evidence-based practices.'
+      title: "Clinical Excellence",
+      description:
+        "We maintain the highest standards of physical therapy through continuous education and evidence-based practices.",
     },
     {
       icon: Users,
-      title: 'Family Partnership',
-      description: 'We work closely with pet families, providing education and support for optimal home care and recovery outcomes.'
+      title: "Family Partnership",
+      description:
+        "We work closely with pet families, providing education and support for optimal home care and recovery outcomes.",
     },
     {
       icon: BookOpen,
-      title: 'Continuous Learning',
-      description: 'Our team stays current with the latest rehabilitation techniques and technologies to provide the best possible care.'
-    }
+      title: "Continuous Learning",
+      description:
+        "Our team stays current with the latest rehabilitation techniques and technologies to provide the best possible care.",
+    },
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-emerald-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               About Paw Power Rehab
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Founded on the belief that every pet deserves the best possible care, 
-              we've dedicated our practice to advancing animal rehabilitation through 
-              compassionate, evidence-based therapy services.
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
+              Founded on the belief that every pet deserves the best possible
+              care, we've dedicated our practice to advancing animal
+              rehabilitation through compassionate, evidence-based therapy
+              services.
             </p>
           </div>
         </div>
@@ -69,52 +63,70 @@ const AboutPage = () => {
 
       {/* Mission & Story Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Our Story</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Paw Power Rehab was founded in 2010 by Dr. Sarah Mitchell after witnessing 
-                the incredible recovery of her own dog following a spinal injury. Inspired by the 
-                transformative power of physical therapy, she dedicated her career to bringing 
-                advanced rehabilitation services to pets in our community.
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 mb-20 lg:grid-cols-2">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold text-gray-900 lg:text-4xl">
+                Our Story
+              </h2>
+              <p className="pb-4 text-xl text-blue-700">
+                A Decade of Healing—Now for Pets
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                What started as a small clinic has grown into a comprehensive rehabilitation center, 
-                helping hundreds of pets recover from surgery, injury, and chronic conditions. 
-                Our success is measured not just in clinical outcomes, but in the joy we see 
-                when pets return to their families stronger and happier than before.
+              <p className="text-lg leading-relaxed text-gray-900">
+                With over 10 years of experience as a licensed physical
+                therapist, I’ve had the privilege of helping countless
+                individuals regain strength, reduce pain, and return to doing
+                what they love. Throughout my career, I’ve seen how powerful
+                rehabilitation can be—not just physically, but emotionally—and
+                I’ve long believed that our animal companions deserve the same
+                level of care and attention.
+              </p>
+              <p className="text-lg leading-relaxed text-gray-900">
+                As a lifelong animal lover, I began to see a need in our
+                community: pet owners looking for safe, effective ways to
+                support their animals through injury recovery, surgery rehab,
+                chronic pain, and age-related mobility changes. This inspired me
+                to take the next step in my career and begin formal training in
+                animal rehabilitation and therapy.
+              </p>
+              <p className="text-lg leading-relaxed text-gray-900">
+                Although Paw Power Rehab is a new practice, it’s built on a
+                strong foundation of clinical expertise, compassionate care, and
+                a deep commitment to improving quality of life. My extensive
+                background in human physical therapy allows me to bring a
+                seasoned, evidence-based approach to every animal I work with,
+                while I continue expanding my education specifically in
+                veterinary rehabilitation.
               </p>
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={clinicImage}
                 alt="Modern veterinary clinic interior with therapy equipment"
                 className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="relative order-2 lg:order-1">
               <img
-                src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Modern therapy equipment and treatment room"
+                src={dogImage}
+                alt="A dog"
                 className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
               />
             </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To provide exceptional physical therapy and rehabilitation services that restore 
-                mobility, reduce pain, and improve the quality of life for pets while supporting 
-                their families throughout the healing process.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We believe that every pet deserves the opportunity to live their best life, 
-                free from pain and with full mobility. Through our comprehensive approach 
-                combining advanced techniques with compassionate care, we help pets not 
-                just recover, but thrive.
+            <div className="order-1 space-y-6 lg:order-2">
+              <h2 className="text-3xl font-bold text-gray-900 lg:text-4xl">
+                Our Mission
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-600">
+                At Paw Power Rehab, our mission is simple: to provide
+                thoughtful, personalized care that helps your pet feel better,
+                move better, and live more fully. We may be new to the animal
+                rehab space, but we’re grounded in years of healing
+                experience—and we’re honored to support your pet’s wellness
+                journey.
               </p>
             </div>
           </div>
@@ -123,30 +135,34 @@ const AboutPage = () => {
 
       {/* Values Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
               Our Core Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These principles guide everything we do, from individual patient care 
-              to our broader commitment to advancing animal rehabilitation.
+            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+              These principles guide everything we do, from individual patient
+              care to our broader commitment to advancing animal rehabilitation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
+                  className="p-8 text-center transition-shadow duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl"
                 >
-                  <div className="bg-blue-100 p-4 rounded-2xl w-fit mx-auto mb-6">
-                    <Icon className="h-8 w-8 text-blue-600" />
+                  <div className="p-4 mx-auto mb-6 bg-blue-100 rounded-2xl w-fit">
+                    <Icon className="w-8 h-8 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                    {value.title}
+                  </h3>
+                  <p className="leading-relaxed text-gray-600">
+                    {value.description}
+                  </p>
                 </div>
               );
             })}
@@ -156,34 +172,40 @@ const AboutPage = () => {
 
       {/* Team Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
               Meet Our Expert Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our licensed professionals bring years of specialized training and 
+            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+              Our licensed professionals bring years of specialized training and
               genuine passion for animal welfare to every treatment session.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex justify-center">
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="flex flex-col items-center w-full max-w-lg p-8 mx-4 transition-shadow duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                  <div className="text-blue-600 font-medium mb-2">{member.title}</div>
-                  <div className="text-sm text-gray-500 mb-4">{member.credentials}</div>
-                  <p className="text-gray-600 leading-relaxed">{member.bio}</p>
+                <div className="mb-4">
+                  <img
+                    src={clinicImage}
+                    alt={member.name}
+                    className="object-cover w-40 h-40 border-4 border-blue-100 rounded-full shadow-md"
+                  />
                 </div>
+                <h3 className="mb-1 text-2xl font-bold text-gray-900">
+                  {member.name}
+                </h3>
+                <div className="mb-1 font-medium text-blue-700">
+                  {member.title}
+                </div>
+                <div className="mb-3 text-sm text-gray-500">
+                  {member.credentials}
+                </div>
+                <p className="text-center text-gray-700">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -192,27 +214,38 @@ const AboutPage = () => {
 
       {/* Credentials & Certifications */}
       <section className="py-20 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white lg:text-4xl">
               Professional Credentials & Certifications
             </h2>
-            <p className="text-xl text-blue-100 leading-relaxed">
-              Our team maintains the highest professional standards through continuous education 
-              and certification with leading veterinary rehabilitation organizations.
+            <p className="text-xl leading-relaxed text-blue-100">
+              Our team maintains the highest professional standards through
+              continuous education and certification with leading veterinary
+              rehabilitation organizations.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-2xl font-bold text-white mb-2">CCRT</div>
-                <div className="text-blue-100">Certified Canine Rehabilitation Therapist</div>
+            <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-4">
+              <div className="p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="mb-2 text-2xl font-bold text-white">PT</div>
+                <div className="text-blue-100">Physical Therapist</div>
               </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-2xl font-bold text-white mb-2">CCRP</div>
-                <div className="text-blue-100">Certified Canine Rehabilitation Practitioner</div>
+              <div className="p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="mb-2 text-2xl font-bold text-white">DPT</div>
+                <div className="text-blue-100">Doctor of Physical Therapy</div>
               </div>
-              <div className="bg-white bg-opacity-10 p-6 rounded-xl">
-                <div className="text-2xl font-bold text-white mb-2">Licensed</div>
-                <div className="text-blue-100">State Licensed Veterinary Practice</div>
+              <div className="p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="mb-2 text-2xl font-bold text-white">
+                  Cert. DN
+                </div>
+                <div className="text-blue-100">Certified in Dry Needling</div>
+              </div>
+              <div className="p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="mb-2 text-2xl font-bold text-white">
+                  Cert. SMT
+                </div>
+                <div className="text-blue-100">
+                  Certified in Spinal Manipulative Therapy
+                </div>
               </div>
             </div>
           </div>
