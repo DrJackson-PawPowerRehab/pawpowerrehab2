@@ -1,8 +1,12 @@
 import { Resend } from 'resend';
-import { CONTACT_INFO } from '../../src/config/constants';
+// Remove import that's causing errors
+// import { CONTACT_INFO } from '../../src/config/constants';
 
 export const handler = async function(event, context) {
   console.log('Function triggered');
+  
+  // Define contact info directly in the function
+  const PHONE_DISPLAY = "(706) 897-7012";
   
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
@@ -115,7 +119,7 @@ export const handler = async function(event, context) {
         ${data.preferredDate ? `<li><strong>Preferred Date:</strong> ${new Date(data.preferredDate).toLocaleDateString()}</li>` : ''}
       </ul>
       
-      <p>If you need to make any changes to your request or have any questions, please don't hesitate to contact us at ${CONTACT_INFO.PHONE.DISPLAY}.</p>
+      <p>If you need to make any changes to your request or have any questions, please don't hesitate to contact us at ${PHONE_DISPLAY}.</p>
       
       <p>Thank you for choosing Paw Power Rehabilitation!</p>
       
@@ -136,7 +140,7 @@ export const handler = async function(event, context) {
       - Requested Service: ${data.appointmentType}
       ${data.preferredDate ? `- Preferred Date: ${new Date(data.preferredDate).toLocaleDateString()}` : ''}
       
-      If you need to make any changes to your request or have any questions, please don't hesitate to contact us at ${CONTACT_INFO.PHONE.DISPLAY}.
+      If you need to make any changes to your request or have any questions, please don't hesitate to contact us at ${PHONE_DISPLAY}.
       
       Thank you for choosing Paw Power Rehabilitation!
       
@@ -173,4 +177,4 @@ export const handler = async function(event, context) {
       body: JSON.stringify({ error: 'Failed to send email', details: error.message }),
     };
   }
-} 
+}

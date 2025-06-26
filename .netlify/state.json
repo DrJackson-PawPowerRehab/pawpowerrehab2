@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Lewisburg",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "TN",
+				"name": "Tennessee"
+			},
+			"timezone": "America/Chicago",
+			"latitude": 35.4586,
+			"longitude": -86.783,
+			"postalCode": "37091"
+		},
+		"timestamp": 1750895752162
+	}
+}
