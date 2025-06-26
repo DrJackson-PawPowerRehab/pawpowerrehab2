@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { CONTACT_INFO, PRACTICE_INFO } from "../config/constants";
 
 const Footer = () => {
   return (
@@ -14,8 +15,8 @@ const Footer = () => {
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <div>
-                <div className="text-xl font-bold">Paw Power Rehab</div>
-                <div className="text-blue-400">Animal Physical Therapy</div>
+                <div className="text-xl font-bold">{PRACTICE_INFO.NAME}</div>
+                <div className="text-blue-400">{PRACTICE_INFO.TAGLINE}</div>
               </div>
             </div>
             <p className="max-w-md mb-6 text-gray-300">
@@ -26,8 +27,8 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
                 <span>
-                  <a href="tel:7068976897" className="hover:underline">
-                    (706) 897-6897
+                  <a href={CONTACT_INFO.PHONE.HREF} className="hover:underline">
+                    {CONTACT_INFO.PHONE.DISPLAY}
                   </a>
                 </span>
               </div>
@@ -35,17 +36,17 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-blue-400" />
                 <p>
                   <a
-                    href="mailto:Drjackson@pawpowerrehab.com"
+                    href={`mailto:${CONTACT_INFO.EMAIL.DOCTOR}`}
                     className="hover:underline"
                   >
-                    Drjackson@pawpowerrehab.com
+                    {CONTACT_INFO.EMAIL.DOCTOR}
                   </a>
                   <br />
                   <a
-                    href="mailto:Admin@pawpowerrehab.com"
+                    href={`mailto:${CONTACT_INFO.EMAIL.ADMIN}`}
                     className="hover:underline"
                   >
-                    Admin@pawpowerrehab.com
+                    {CONTACT_INFO.EMAIL.ADMIN}
                   </a>
                 </p>
               </div>
@@ -57,16 +58,16 @@ const Footer = () => {
                   <a
                     href={
                       /iPhone|iPad|iPod/i.test(navigator.userAgent)
-                        ? "maps://maps.apple.com/?q=24+Lance+Street+Blue+Ridge+GA+30513"
-                        : "https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu"
+                        ? `maps://maps.apple.com/?q=${CONTACT_INFO.ADDRESS.FULL}`
+                        : CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL
                     }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
-                    24 Lance Street
+                    {CONTACT_INFO.ADDRESS.STREET}
                     <br />
-                    Blue Ridge, GA 30513
+                    {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE} {CONTACT_INFO.ADDRESS.ZIP}
                   </a>
                 </p>
               </div>
@@ -134,14 +135,14 @@ const Footer = () => {
                   Book an Appointment
                 </Link>
               </div>
-              <div className="text-sm">All appointments by request</div>
+              <div className="text-sm">{CONTACT_INFO.HOURS.STATUS}</div>
             </div>
           </div>
         </div>
 
         <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800">
           <p>
-            &copy; 2025 Paw Power Rehab. All rights reserved. | Licensed
+            &copy; {new Date().getFullYear()} {PRACTICE_INFO.NAME}. All rights reserved. | Licensed
             Veterinary Physical Therapy Practice
           </p>
         </div>
