@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { CONTACT_INFO } from "../config/constants";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,8 @@ const ContactPage = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -31,37 +34,68 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to an API
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        petName: "",
-        petType: "",
-        concern: "",
-        appointmentType: "",
-        preferredDate: "",
-        preferredTime: "",
-        message: "",
-        hearAboutUs: "",
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    try {
+      console.log("Submitting form data:", formData);
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+      
+      let result;
+      try {
+        result = await response.json();
+      } catch (err: unknown) {
+        console.error("Error parsing JSON response:", err);
+        throw new Error(`Failed to parse response: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      }
+      
+      console.log("Response from server:", result);
+      
+      if (!response.ok) {
+        throw new Error(result?.details || result?.error || 'Failed to send appointment request');
+      }
+      
+      setIsSubmitted(true);
+      
+      // Reset form after success
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          petName: "",
+          petType: "",
+          concern: "",
+          appointmentType: "",
+          preferredDate: "",
+          preferredTime: "",
+          message: "",
+          hearAboutUs: "",
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(error instanceof Error ? error.message : 'An unknown error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
     return (
-      <div className="flex items-center justify-center min-h-screen pt-20 bg-gradient-to-br from-blue-50 to-emerald-50">
-        <div className="max-w-md p-12 text-center bg-white shadow-xl rounded-2xl">
-          <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
+      <div className="flex justify-center items-center pt-20 min-h-screen bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="p-12 max-w-md text-center bg-white rounded-2xl shadow-xl">
+          <div className="p-4 mx-auto mb-6 bg-emerald-100 rounded-full w-fit">
             <CheckCircle className="w-12 h-12 text-emerald-600" />
           </div>
           <h2 className="mb-4 text-2xl font-bold text-gray-900">Thank You!</h2>
@@ -69,8 +103,11 @@ const ContactPage = () => {
             We've received your appointment request and will contact you within
             24 hours to confirm your booking.
           </p>
+          <p className="mb-2 text-gray-600">
+            A confirmation email has been sent to {formData.email}
+          </p>
           <p className="text-sm text-gray-500">
-            For urgent matters, please call us at (555) 123-PAWS
+            For urgent matters, please call us at {CONTACT_INFO.PHONE.DISPLAY}
           </p>
         </div>
       </div>
@@ -86,7 +123,7 @@ const ContactPage = () => {
             <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               Contact & Request Appointment
             </h1>
-            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
+            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
               Ready to start your pet's healing journey? Schedule a consultation
               with our expert team or get in touch with any questions.
             </p>
@@ -115,8 +152,8 @@ const ContactPage = () => {
                         Phone
                       </h3>
                       <p className="text-gray-600">
-                        <a href="tel:7068976897" className="hover:underline">
-                          (706) 897-6897
+                        <a href={CONTACT_INFO.PHONE.HREF} className="hover:underline">
+                          {CONTACT_INFO.PHONE.DISPLAY}
                         </a>
                       </p>
                       <p className="text-sm text-gray-500">Call or Text</p>
@@ -124,7 +161,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-emerald-100">
+                    <div className="p-3 bg-emerald-100 rounded-full">
                       <Mail className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
@@ -133,17 +170,17 @@ const ContactPage = () => {
                       </h3>
                       <p>
                         <a
-                          href="mailto:Drjackson@pawpowerrehab.com"
+                          href={`mailto:${CONTACT_INFO.EMAIL.DOCTOR}`}
                           className="text-gray-600 hover:underline"
                         >
-                          Drjackson@pawpowerrehab.com
+                          {CONTACT_INFO.EMAIL.DOCTOR}
                         </a>
                         <br />
                         <a
-                          href="mailto:Admin@pawpowerrehab.com"
+                          href={`mailto:${CONTACT_INFO.EMAIL.ADMIN}`}
                           className="text-gray-600 hover:underline"
                         >
-                          Admin@pawpowerrehab.com
+                          {CONTACT_INFO.EMAIL.ADMIN}
                         </a>
                       </p>
                       <p className="text-sm text-gray-500">
@@ -153,7 +190,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-amber-100">
+                    <div className="p-3 bg-amber-100 rounded-full">
                       <MapPin className="w-6 h-6 text-amber-600" />
                     </div>
                     <div>
@@ -166,16 +203,16 @@ const ContactPage = () => {
                         <a
                           href={
                             /iPhone|iPad|iPod/i.test(navigator.userAgent)
-                              ? "maps://maps.apple.com/?q=24+Lance+Street+Blue+Ridge+GA+30513"
-                              : "https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu"
+                              ? `maps://maps.apple.com/?q=${CONTACT_INFO.ADDRESS.FULL}`
+                              : CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL
                           }
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:underline"
                         >
-                          24 Lance Street
+                          {CONTACT_INFO.ADDRESS.STREET}
                           <br />
-                          Blue Ridge, GA 30513
+                          {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE} {CONTACT_INFO.ADDRESS.ZIP}
                         </a>
                       </p>
                     </div>
@@ -190,7 +227,7 @@ const ContactPage = () => {
                         Hours
                       </h3>
                       <div className="text-sm text-gray-600">
-                        <p>By Appointment Only</p>
+                        <p>{CONTACT_INFO.HOURS.STATUS}</p>
                       </div>
                     </div>
                   </div>
@@ -210,7 +247,7 @@ const ContactPage = () => {
 
             {/* Appointment Form */}
             <div id="appointment-section" className="lg:col-span-2">
-              <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
+              <div className="p-8 bg-white rounded-2xl border border-gray-200 shadow-lg">
                 <h2 className="mb-8 text-2xl font-bold text-gray-900">
                   Request an Appointment
                 </h2>
@@ -380,7 +417,7 @@ const ContactPage = () => {
                       Appointment Preferences
                     </h3>
 
-                    <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-6 justify-center md:grid-cols-2">
                       <div className="flex flex-col">
                         <label
                           htmlFor="appointmentType"
@@ -439,7 +476,7 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Please share any additional details about your pet's condition, current medications, or specific concerns..."
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="px-4 py-3 w-full rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     ></textarea>
                   </div>
 
@@ -455,7 +492,7 @@ const ContactPage = () => {
                       name="hearAboutUs"
                       value={formData.hearAboutUs}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="px-4 py-3 w-full rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="">Select an option</option>
                       <option value="veterinarian">
@@ -469,14 +506,42 @@ const ContactPage = () => {
                     </select>
                   </div>
 
+                  {/* Error Message */}
+                  {submitError && (
+                    <div className="p-4 mt-4 text-red-700 bg-red-100 rounded-lg">
+                      <div className="flex items-center mb-2">
+                        <AlertCircle className="mr-2 w-5 h-5" />
+                        <span className="font-medium">Error sending appointment request</span>
+                      </div>
+                      <p className="text-sm">{submitError}</p>
+                      <p className="mt-2 text-sm">
+                        Please try again or contact us directly at {CONTACT_INFO.PHONE.DISPLAY}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Submit Button */}
                   <div className="pt-6">
                     <button
                       type="submit"
-                      className="flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
+                      disabled={isSubmitting}
+                      className={`flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg ${
+                        isSubmitting 
+                          ? "bg-blue-400 cursor-not-allowed" 
+                          : "bg-blue-600 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
+                      }`}
                     >
-                      <Send className="w-5 h-5" />
-                      <span>Submit Appointment Request</span>
+                      {isSubmitting ? (
+                        <>
+                          <span className="mr-2 w-5 h-5 rounded-full border-4 border-white animate-spin border-t-transparent"></span>
+                          <span>Sending Request...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" />
+                          <span>Submit Appointment Request</span>
+                        </>
+                      )}
                     </button>
                     <p className="mt-3 text-sm text-center text-gray-500">
                       We'll contact you within 24 hours to confirm your
@@ -493,7 +558,7 @@ const ContactPage = () => {
       {/* Map & Directions */}
       <section className="py-20 bg-gray-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 Clinic Location
@@ -503,17 +568,17 @@ const ContactPage = () => {
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-blue-600" />
                   <span className="font-medium">
-                    24 Lance Street Blue Ridge, GA 30513
+                    {CONTACT_INFO.ADDRESS.FULL}
                   </span>
                 </div>
               </div>
 
               <div className="mt-8">
                 <a
-                  href="https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+                  href={CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
+                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white bg-blue-600 rounded-full transition-colors hover:bg-blue-700"
                 >
                   <MapPin className="w-4 h-4" />
                   <span>Get Directions</span>
@@ -521,14 +586,14 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center bg-gray-200 h-96 rounded-2xl">
+            <div className="flex justify-center items-center h-96 bg-gray-200 rounded-2xl">
               <div className="text-center">
-                <MapPin className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                <MapPin className="mx-auto mb-4 w-12 h-12 text-gray-400" />
                 <p className="text-gray-600">
                   Interactive map would be embedded here
                 </p>
                 <p className="mt-2 text-sm text-gray-500">
-                  24 Lance Street Blue Ridge, GA 30513
+                  {CONTACT_INFO.ADDRESS.FULL}
                 </p>
               </div>
             </div>

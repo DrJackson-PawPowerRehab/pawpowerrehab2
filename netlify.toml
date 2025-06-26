@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+  functionsPort = 8888
+  targetPort = 5173
+
+# Redirect rules for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables are set in the Netlify dashboard
+# For local development, create a .env file in your project root
+# [template.environment]
+# RESEND_API_KEY = "Your Resend API Key goes here" 
