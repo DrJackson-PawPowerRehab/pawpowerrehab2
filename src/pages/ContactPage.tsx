@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,8 @@ const ContactPage = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -31,30 +33,61 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to an API
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        petName: "",
-        petType: "",
-        concern: "",
-        appointmentType: "",
-        preferredDate: "",
-        preferredTime: "",
-        message: "",
-        hearAboutUs: "",
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    try {
+      console.log("Submitting form data:", formData);
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+      
+      let result;
+      try {
+        result = await response.json();
+      } catch (err: unknown) {
+        console.error("Error parsing JSON response:", err);
+        throw new Error(`Failed to parse response: ${err instanceof Error ? err.message : 'Unknown error'}`);
+      }
+      
+      console.log("Response from server:", result);
+      
+      if (!response.ok) {
+        throw new Error(result?.details || result?.error || 'Failed to send appointment request');
+      }
+      
+      setIsSubmitted(true);
+      
+      // Reset form after success
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          petName: "",
+          petType: "",
+          concern: "",
+          appointmentType: "",
+          preferredDate: "",
+          preferredTime: "",
+          message: "",
+          hearAboutUs: "",
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(error instanceof Error ? error.message : 'An unknown error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -69,8 +102,11 @@ const ContactPage = () => {
             We've received your appointment request and will contact you within
             24 hours to confirm your booking.
           </p>
+          <p className="mb-2 text-gray-600">
+            A confirmation email has been sent to {formData.email}
+          </p>
           <p className="text-sm text-gray-500">
-            For urgent matters, please call us at (555) 123-PAWS
+            For urgent matters, please call us at (706) 897-6897
           </p>
         </div>
       </div>
@@ -469,14 +505,42 @@ const ContactPage = () => {
                     </select>
                   </div>
 
+                  {/* Error Message */}
+                  {submitError && (
+                    <div className="p-4 mt-4 text-red-700 bg-red-100 rounded-lg">
+                      <div className="flex items-center mb-2">
+                        <AlertCircle className="w-5 h-5 mr-2" />
+                        <span className="font-medium">Error sending appointment request</span>
+                      </div>
+                      <p className="text-sm">{submitError}</p>
+                      <p className="mt-2 text-sm">
+                        Please try again or contact us directly at (706) 897-6897
+                      </p>
+                    </div>
+                  )}
+
                   {/* Submit Button */}
                   <div className="pt-6">
                     <button
                       type="submit"
-                      className="flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
+                      disabled={isSubmitting}
+                      className={`flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg ${
+                        isSubmitting 
+                          ? "bg-blue-400 cursor-not-allowed" 
+                          : "bg-blue-600 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
+                      }`}
                     >
-                      <Send className="w-5 h-5" />
-                      <span>Submit Appointment Request</span>
+                      {isSubmitting ? (
+                        <>
+                          <span className="w-5 h-5 mr-2 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
+                          <span>Sending Request...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" />
+                          <span>Submit Appointment Request</span>
+                        </>
+                      )}
                     </button>
                     <p className="mt-3 text-sm text-center text-gray-500">
                       We'll contact you within 24 hours to confirm your
