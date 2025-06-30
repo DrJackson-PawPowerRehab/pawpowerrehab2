@@ -3,10 +3,9 @@ import {
   Hand,
   Dumbbell,
   Zap,
-  Heart,
-  Clock,
   CheckCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ServicesPage = () => {
   const services = [
@@ -85,10 +84,10 @@ const ServicesPage = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="py-6 sm:py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+      <section className="py-6 sm:py-20 bg-gradient-to-br from-accent10 to-primary10">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-2 text-center sm:mb-16">
-            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 text-primary lg:text-5xl">
               Comprehensive Therapy Services
             </h1>
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
@@ -112,8 +111,8 @@ const ServicesPage = () => {
                   className="p-8 transition-all duration-300 bg-white border border-gray-100 shadow-lg rounded-2xl hover:shadow-xl"
                 >
                   <div className="flex items-start space-x-6">
-                    <div className="p-4 bg-blue-100 rounded-2xl">
-                      <Icon className="w-8 h-8 text-blue-600" />
+                    <div className="p-4 bg-secondary rounded-2xl">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1">
                       <h3 className="mb-3 text-xl font-semibold text-gray-900">
@@ -133,7 +132,7 @@ const ServicesPage = () => {
                               key={idx}
                               className="flex items-center space-x-2 text-sm text-gray-600"
                             >
-                              <CheckCircle className="w-4 h-4 text-emerald-500" />
+                              <CheckCircle className="w-4 h-4 text-accent" />
                               <span>{benefit}</span>
                             </li>
                           ))}
@@ -147,7 +146,7 @@ const ServicesPage = () => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-lg font-semibold text-blue-600">
+                          <div className="text-lg font-semibold text-secondary">
                             {service.price}
                           </div>
                           {service.packageAvailable && (
@@ -183,7 +182,7 @@ const ServicesPage = () => {
               <div className="grid grid-cols-1 gap-3">
                 {conditions.map((condition, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="flex-shrink-0 w-5 h-5 text-emerald-500" />
+                    <CheckCircle className="flex-shrink-0 w-5 h-5 text-accent" />
                     <span className="text-gray-700">{condition}</span>
                   </div>
                 ))}
@@ -216,8 +215,8 @@ const ServicesPage = () => {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div className="text-center">
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full">
-                <span className="text-2xl font-bold text-blue-600">1</span>
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-primary10">
+                <span className="text-2xl font-bold text-primary">1</span>
               </div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Initial Assessment
@@ -229,8 +228,8 @@ const ServicesPage = () => {
             </div>
 
             <div className="text-center">
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-emerald-100">
-                <span className="text-2xl font-bold text-emerald-600">2</span>
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-primary10">
+                <span className="text-2xl font-bold text-primary">2</span>
               </div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Treatment Plan
@@ -242,8 +241,8 @@ const ServicesPage = () => {
             </div>
 
             <div className="text-center">
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-amber-100">
-                <span className="text-2xl font-bold text-amber-600">3</span>
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-primary10">
+                <span className="text-2xl font-bold text-primary">3</span>
               </div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Active Treatment
@@ -255,8 +254,8 @@ const ServicesPage = () => {
             </div>
 
             <div className="text-center">
-              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 bg-purple-100 rounded-full">
-                <span className="text-2xl font-bold text-purple-600">4</span>
+              <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-primary10">
+                <span className="text-2xl font-bold text-primary">4</span>
               </div>
               <h3 className="mb-3 text-lg font-semibold text-gray-900">
                 Progress Monitoring
@@ -271,30 +270,29 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-emerald-600">
+      <section className="py-20 bg-gradient-to-r from-primary to-accent">
         <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl font-bold text-white lg:text-4xl">
-              Ready to Start Your Pet's Recovery?
+              Ready to Start Your Pet's Healing Journey?
             </h2>
-            <p className="text-xl text-blue-100">
-              Contact us today to schedule an initial consultation and learn how
-              our comprehensive therapy services can help your pet heal and
-              thrive.
+            <p className="text-xl text-white">
+              Schedule a consultation today and let our expert team create a
+              personalized treatment plan for your beloved companion.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a
-                href="/contact"
-                className="px-8 py-4 font-semibold text-blue-600 transition-all duration-300 transform bg-white rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
+              <Link
+                to="/contact#appointment-section"
+                className="px-8 py-4 font-semibold transition-all duration-300 transform bg-white rounded-full shadow-lg text-primary hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
               >
-                Schedule Consultation
-              </a>
-              <a
-                href="tel:555-123-7297"
-                className="px-8 py-4 font-semibold text-white transition-all duration-300 border-2 border-white rounded-full hover:bg-white hover:text-blue-600"
+                Book Consultation
+              </Link>
+              <Link
+                to="/faq"
+                className="px-8 py-4 font-semibold text-white transition-all duration-300 border-2 border-white rounded-full hover:bg-white hover:text-primary"
               >
-                Call (555) 123-PAWS
-              </a>
+                Learn More
+              </Link>
             </div>
           </div>
         </div>

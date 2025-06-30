@@ -1,22 +1,21 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, PawPrint } from "lucide-react";
 import { CONTACT_INFO, PRACTICE_INFO } from "../config/constants";
 
 const Footer = () => {
   return (
-    <footer className="text-white bg-gray-900">
+    <footer className="text-white bg-primaryDARK">
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center mb-4 space-x-3">
-              <div className="p-2 bg-blue-600 rounded-full">
-                <Heart className="w-6 h-6 text-white" />
+              <div className="p-2 rounded-full bg-accent">
+                <PawPrint className="w-6 h-6 text-white" />
               </div>
               <div>
                 <div className="text-xl font-bold">{PRACTICE_INFO.NAME}</div>
-                <div className="text-blue-400">{PRACTICE_INFO.TAGLINE}</div>
+                <div className="text-secondary">{PRACTICE_INFO.TAGLINE}</div>
               </div>
             </div>
             <p className="max-w-md mb-6 text-gray-300">
@@ -25,7 +24,7 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
+                <Phone className="w-5 h-5 text-white" />
                 <span>
                   <a href={CONTACT_INFO.PHONE.HREF} className="hover:underline">
                     {CONTACT_INFO.PHONE.DISPLAY}
@@ -33,7 +32,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400" />
+                <Mail className="w-5 h-5 text-white" />
                 <p>
                   <a
                     href={`mailto:${CONTACT_INFO.EMAIL.DOCTOR}`}
@@ -51,7 +50,7 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-blue-400" />
+                <MapPin className="w-5 h-5 text-white" />
                 <p className="">
                   Cohutta Animal Clinic
                   <br />
@@ -82,7 +81,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-gray-300 transition-colors hover:text-blue-400"
+                  className="text-gray-300 transition-colors hover:underline"
                 >
                   About Us
                 </Link>
@@ -90,7 +89,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/services"
-                  className="text-gray-300 transition-colors hover:text-blue-400"
+                  className="text-gray-300 transition-colors hover:underline"
                 >
                   Our Services
                 </Link>
@@ -98,7 +97,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/blog"
-                  className="text-gray-300 transition-colors hover:text-blue-400"
+                  className="text-gray-300 transition-colors hover:underline"
                 >
                   Blog
                 </Link>
@@ -106,7 +105,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/faq"
-                  className="text-gray-300 transition-colors hover:text-blue-400"
+                  className="text-gray-300 transition-colors hover:underline"
                 >
                   FAQ
                 </Link>
@@ -114,7 +113,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-300 transition-colors hover:text-blue-400"
+                  className="text-gray-300 transition-colors hover:underline"
                 >
                   Contact
                 </Link>
@@ -124,19 +123,18 @@ const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">
-              Appointment On Request
+            <h3 className="pl-[16px] mb-2 text-lg font-semibold">
+              By Appointment Only
             </h3>
             <div className="space-y-4 text-gray-300">
               <div className="pt-2">
                 <Link
                   to="/contact#appointment-form"
-                  className="inline-block px-4 py-2 text-sm font-semibold text-white transition-colors bg-blue-600 rounded hover:bg-blue-700"
+                  className="inline-block px-8 py-4 text-sm font-semibold text-white transition-colors rounded-full bg-primary hover:bg-accent10 hover:text-primary"
                 >
                   Book an Appointment
                 </Link>
               </div>
-              <div className="text-sm">{CONTACT_INFO.HOURS.STATUS}</div>
             </div>
           </div>
         </div>

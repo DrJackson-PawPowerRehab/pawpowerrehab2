@@ -111,8 +111,8 @@ const ContactPage = () => {
     return (
       <div className="flex items-center justify-center min-h-screen pt-20 bg-gradient-to-br from-blue-50 to-emerald-50">
         <div className="max-w-md p-12 text-center bg-white shadow-xl rounded-2xl">
-          <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
-            <CheckCircle className="w-12 h-12 text-emerald-600" />
+          <div className="p-4 mx-auto mb-6 rounded-full bg-secondary w-fit">
+            <CheckCircle className="w-12 h-12 text-white" />
           </div>
           <h2 className="mb-4 text-2xl font-bold text-gray-900">Thank You!</h2>
           <p className="mb-6 text-gray-600">
@@ -133,10 +133,10 @@ const ContactPage = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-accent10 to-primary10">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 text-primary lg:text-5xl">
               Contact & Request Appointment
             </h1>
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
@@ -160,8 +160,8 @@ const ContactPage = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-blue-100 rounded-full">
-                      <Phone className="w-6 h-6 text-blue-600" />
+                    <div className="p-3 rounded-full bg-secondary">
+                      <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-semibold text-gray-900">
@@ -180,8 +180,8 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-emerald-100">
-                      <Mail className="w-6 h-6 text-emerald-600" />
+                    <div className="p-3 rounded-full bg-secondary">
+                      <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-semibold text-gray-900">
@@ -209,8 +209,8 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-amber-100">
-                      <MapPin className="w-6 h-6 text-amber-600" />
+                    <div className="p-3 rounded-full bg-secondary">
+                      <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-semibold text-gray-900">
@@ -240,8 +240,8 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-purple-100 rounded-full">
-                      <Clock className="w-6 h-6 text-purple-600" />
+                    <div className="p-3 rounded-full bg-secondary">
+                      <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-semibold text-gray-900">
@@ -254,11 +254,11 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="p-4 mt-8 bg-blue-50 rounded-xl">
-                  <h4 className="mb-2 font-semibold text-blue-900">
+                <div className="p-4 mt-8 bg-red-50 rounded-xl">
+                  <h4 className="mb-2 font-semibold text-red-900">
                     Emergency Situations
                   </h4>
-                  <p className="text-sm text-blue-700">
+                  <p className="text-sm text-red-700">
                     For after-hours emergencies, please contact your primary
                     veterinarian or nearest emergency clinic.
                   </p>
@@ -573,7 +573,7 @@ const ContactPage = () => {
                       className={`flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg ${
                         isSubmitting
                           ? "bg-blue-400 cursor-not-allowed"
-                          : "bg-blue-600 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
+                          : "bg-primary hover:bg-primaryHover hover:shadow-xl hover:-translate-y-1"
                       }`}
                     >
                       {isSubmitting ? (
@@ -594,52 +594,6 @@ const ContactPage = () => {
                     </p>
                   </div>
                 </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map & Directions */}
-      <section className="py-20 bg-gray-50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                Clinic Location
-              </h2>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <span className="font-medium">
-                    {CONTACT_INFO.ADDRESS.FULL}
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <a
-                  href={CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
-                >
-                  <MapPin className="w-4 h-4" />
-                  <span>Get Directions</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center bg-gray-200 h-96 rounded-2xl">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 mx-auto mb-4 text-gray-400" />
-                <p className="text-gray-600">
-                  Interactive map would be embedded here
-                </p>
-                <p className="mt-2 text-sm text-gray-500">
-                  {CONTACT_INFO.ADDRESS.FULL}
-                </p>
               </div>
             </div>
           </div>

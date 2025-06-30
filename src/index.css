@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    :root {
+        --color-primary: #215e65;
+        --color-primaryDARK: #0d272a;
+        --color-primary-hover: #15383e;
+        --color-primary-10: rgba(33, 94, 101, 0.1);
+        --color-secondary: #6aa6ab;
+        --color-secondary10: #7fc4ad;
+        --color-accent: #70977e;
+        --color-accent10: #e5fced;
+        --color-background: #f9fafb;
+        --color-text: #1e293b;
+    }
+}

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDown, ChevronUp, Search, Phone, Mail } from "lucide-react";
+import { CONTACT_INFO } from "../config/constants";
+import { Link } from "react-router-dom";
 
 const FAQPage = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
@@ -130,10 +132,10 @@ const FAQPage = () => {
   return (
     <div className="">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-accent10 to-primary10">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 text-primary lg:text-5xl">
               Frequently Asked Questions
             </h1>
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
@@ -187,21 +189,23 @@ const FAQPage = () => {
                         >
                           <button
                             onClick={() => toggleItem(globalIndex)}
-                            className="w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-6 text-left"
                           >
                             <div className="flex items-center justify-between">
-                              <h3 className="pr-4 text-lg font-semibold text-gray-900">
+                              <h3
+                                className={`pr-4 text-lg font-semibold text-gray-900 ${isOpen ? "border-b-2 border-primary" : ""}`}
+                              >
                                 {faq.question}
                               </h3>
                               {isOpen ? (
-                                <ChevronUp className="flex-shrink-0 w-5 h-5 text-blue-600" />
+                                <ChevronUp className="flex-shrink-0 w-5 h-5 text-primary" />
                               ) : (
                                 <ChevronDown className="flex-shrink-0 w-5 h-5 text-gray-400" />
                               )}
                             </div>
                           </button>
                           {isOpen && (
-                            <div className="px-6 pb-6">
+                            <div className="p-6">
                               <p className="leading-relaxed text-gray-600">
                                 {faq.answer}
                               </p>
@@ -223,7 +227,7 @@ const FAQPage = () => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
-              Still Have Questions?
+              Still have questions?
             </h2>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
               Our friendly team is here to help. Don't hesitate to reach out
@@ -234,8 +238,8 @@ const FAQPage = () => {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="p-8 text-center bg-white shadow-lg rounded-2xl">
-              <div className="p-4 mx-auto mb-6 bg-blue-100 rounded-full w-fit">
-                <Phone className="w-8 h-8 text-blue-600" />
+              <div className="p-4 mx-auto mb-6 rounded-full bg-secondary w-fit">
+                <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="mb-4 text-xl font-semibold text-gray-900">
                 Call Us
@@ -243,17 +247,16 @@ const FAQPage = () => {
               <p className="mb-4 text-gray-600">
                 Speak directly with our team about your pet's needs
               </p>
-              <a
-                href="tel:555-123-7297"
-                className="font-semibold text-blue-600 hover:text-blue-700"
-              >
-                (555) 123-PAWS
-              </a>
+              <span>
+                <a href={CONTACT_INFO.PHONE.HREF} className="hover:underline">
+                  {CONTACT_INFO.PHONE.DISPLAY}
+                </a>
+              </span>
             </div>
 
             <div className="p-8 text-center bg-white shadow-lg rounded-2xl">
-              <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
-                <Mail className="w-8 h-8 text-emerald-600" />
+              <div className="p-4 mx-auto mb-6 rounded-full bg-secondary w-fit">
+                <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="mb-4 text-xl font-semibold text-gray-900">
                 Email Us
@@ -261,30 +264,39 @@ const FAQPage = () => {
               <p className="mb-4 text-gray-600">
                 Send us your questions and we'll respond promptly
               </p>
-              <a
-                href="mailto:info@pawsteprehab.com"
-                className="font-semibold text-emerald-600 hover:text-emerald-700"
-              >
-                info@pawsteprehab.com
-              </a>
+              <p>
+                <a
+                  href={`mailto:${CONTACT_INFO.EMAIL.DOCTOR}`}
+                  className="hover:underline"
+                >
+                  {CONTACT_INFO.EMAIL.DOCTOR}
+                </a>
+                <br />
+                <a
+                  href={`mailto:${CONTACT_INFO.EMAIL.ADMIN}`}
+                  className="hover:underline"
+                >
+                  {CONTACT_INFO.EMAIL.ADMIN}
+                </a>
+              </p>
             </div>
 
             <div className="p-8 text-center bg-white shadow-lg rounded-2xl md:col-span-2 lg:col-span-1">
-              <div className="p-4 mx-auto mb-6 rounded-full bg-amber-100 w-fit">
-                <Phone className="w-8 h-8 text-amber-600" />
+              <div className="p-4 mx-auto mb-6 rounded-full bg-secondary w-fit">
+                <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="mb-4 text-xl font-semibold text-gray-900">
                 Schedule Consultation
               </h3>
-              <p className="mb-4 text-gray-600">
+              <p className="mb-10 text-gray-600">
                 Book a consultation to discuss your pet's specific needs
               </p>
-              <a
-                href="/contact"
-                className="inline-block px-6 py-3 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
+              <Link
+                to="/contact"
+                className="px-6 py-2 font-medium text-white transition-colors duration-200 rounded-full bg-primary hover:bg-primaryHover"
               >
-                Book Now
-              </a>
+                Book Appointment
+              </Link>
             </div>
           </div>
         </div>
