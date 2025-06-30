@@ -18,9 +18,9 @@ const FAQPage = () => {
       title: "General Information",
       questions: [
         {
-          question: "What is veterinary physical therapy?",
+          question: "What is animal physical therapy?",
           answer:
-            "Veterinary physical therapy is a specialized field that uses evidence-based techniques to help pets recover from injury, surgery, or manage chronic conditions. It includes manual therapy, therapeutic exercises, hydrotherapy, laser therapy, and other modalities to improve mobility, reduce pain, and enhance quality of life.",
+            "Animal physical therapy is a specialized field that uses evidence-based techniques to help pets recover from injury, surgery, or manage chronic conditions. It includes manual therapy, therapeutic exercises, laser therapy, and other modalities to improve mobility, reduce pain, and enhance quality of life.",
         },
         {
           question: "How do I know if my pet needs physical therapy?",
@@ -70,7 +70,7 @@ const FAQPage = () => {
         {
           question: "Do I need a referral from my veterinarian?",
           answer:
-            "While we welcome referrals from veterinarians, they are not always required. However, we do recommend discussing physical therapy with your vet, especially if your pet has been diagnosed with a specific condition or had recent surgery.",
+            "While we welcome referrals and records from your current veterinarian, our Initial Consultation will be accompanied by an assessment from our on-site veterinarian in accordance to state practice guidelines for animal physical therapy.",
         },
         {
           question: "What should I bring to the first appointment?",
@@ -95,7 +95,7 @@ const FAQPage = () => {
         {
           question: "How much does physical therapy cost?",
           answer:
-            "Costs vary depending on the type and length of treatment. Individual sessions typically range from $70-120, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
+            "Costs vary depending on the type and length of treatment. Individual sessions typically range from $120-145, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
         },
         {
           question: "Does pet insurance cover physical therapy?",
