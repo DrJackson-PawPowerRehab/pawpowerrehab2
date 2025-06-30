@@ -43,12 +43,12 @@ export const handler = async function(event, context) {
       <h2>Pet Information:</h2>
       <p><strong>Pet Name:</strong> ${data.petName}</p>
       <p><strong>Pet Type:</strong> ${data.petType}</p>
+      <p><strong>Primary Vet Name:</strong> ${data.primaryVetName}</p>
+      <p><strong>Primary Vet Number:</strong> ${data.primaryVetNumber}</p>
       <p><strong>Primary Concern:</strong> ${data.concern}</p>
       
       <h2>Appointment Details:</h2>
       <p><strong>Appointment Type:</strong> ${data.appointmentType}</p>
-      <p><strong>Preferred Date:</strong> ${formattedDate}</p>
-      <p><strong>Preferred Time:</strong> ${data.preferredTime || 'Not specified'}</p>
       
       <h2>Additional Information:</h2>
       <p>${data.message || 'None provided'}</p>
@@ -69,12 +69,12 @@ export const handler = async function(event, context) {
       PET INFORMATION:
       Pet Name: ${data.petName}
       Pet Type: ${data.petType}
+      Primary Vet Name: ${data.primaryVetName}
+      Primary Vet Number: ${data.primaryVetNumber}
       Primary Concern: ${data.concern}
       
       APPOINTMENT DETAILS:
       Appointment Type: ${data.appointmentType}
-      Preferred Date: ${formattedDate}
-      Preferred Time: ${data.preferredTime || 'Not specified'}
       
       ADDITIONAL INFORMATION:
       ${data.message || 'None provided'}
@@ -114,9 +114,10 @@ export const handler = async function(event, context) {
       <h2>Your Request Details:</h2>
       <ul>
         <li><strong>Pet:</strong> ${data.petName} (${data.petType})</li>
+        <li><strong>Primary Vet Name:</strong> ${data.primaryVetName}</li>
+        <li><strong>Primary Vet Number:</strong> ${data.primaryVetNumber}</li>
         <li><strong>Reason:</strong> ${data.concern}</li>
         <li><strong>Requested Service:</strong> ${data.appointmentType}</li>
-        ${data.preferredDate ? `<li><strong>Preferred Date:</strong> ${new Date(data.preferredDate).toLocaleDateString()}</li>` : ''}
       </ul>
       
       <p>If you need to make any changes to your request or have any questions, please don't hesitate to contact us at ${PHONE_DISPLAY}.</p>

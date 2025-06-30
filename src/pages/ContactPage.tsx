@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { CONTACT_INFO } from "../config/constants";
 
 const ContactPage = () => {
@@ -9,11 +17,11 @@ const ContactPage = () => {
     email: "",
     phone: "",
     petName: "",
+    primaryVetName: "",
+    primaryVetNumber: "",
     petType: "",
     concern: "",
     appointmentType: "",
-    preferredDate: "",
-    preferredTime: "",
     message: "",
     hearAboutUs: "",
   });
@@ -38,33 +46,39 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(null);
-    
+
     try {
       console.log("Submitting form data:", formData);
-      const response = await fetch('/.netlify/functions/send-email', {
-        method: 'POST',
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-      
+
       let result;
       try {
         result = await response.json();
       } catch (err: unknown) {
         console.error("Error parsing JSON response:", err);
-        throw new Error(`Failed to parse response: ${err instanceof Error ? err.message : 'Unknown error'}`);
+        throw new Error(
+          `Failed to parse response: ${err instanceof Error ? err.message : "Unknown error"}`
+        );
       }
-      
+
       console.log("Response from server:", result);
-      
+
       if (!response.ok) {
-        throw new Error(result?.details || result?.error || 'Failed to send appointment request');
+        throw new Error(
+          result?.details ||
+            result?.error ||
+            "Failed to send appointment request"
+        );
       }
-      
+
       setIsSubmitted(true);
-      
+
       // Reset form after success
       setTimeout(() => {
         setIsSubmitted(false);
@@ -74,18 +88,20 @@ const ContactPage = () => {
           email: "",
           phone: "",
           petName: "",
+          primaryVetName: "",
+          primaryVetNumber: "",
           petType: "",
           concern: "",
           appointmentType: "",
-          preferredDate: "",
-          preferredTime: "",
           message: "",
           hearAboutUs: "",
         });
       }, 3000);
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitError(error instanceof Error ? error.message : 'An unknown error occurred');
+      console.error("Error submitting form:", error);
+      setSubmitError(
+        error instanceof Error ? error.message : "An unknown error occurred"
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -93,9 +109,9 @@ const ContactPage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="flex justify-center items-center pt-20 min-h-screen bg-gradient-to-br from-blue-50 to-emerald-50">
-        <div className="p-12 max-w-md text-center bg-white rounded-2xl shadow-xl">
-          <div className="p-4 mx-auto mb-6 bg-emerald-100 rounded-full w-fit">
+      <div className="flex items-center justify-center min-h-screen pt-20 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div className="max-w-md p-12 text-center bg-white shadow-xl rounded-2xl">
+          <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
             <CheckCircle className="w-12 h-12 text-emerald-600" />
           </div>
           <h2 className="mb-4 text-2xl font-bold text-gray-900">Thank You!</h2>
@@ -123,7 +139,7 @@ const ContactPage = () => {
             <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               Contact & Request Appointment
             </h1>
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
               Ready to start your pet's healing journey? Schedule a consultation
               with our expert team or get in touch with any questions.
             </p>
@@ -152,7 +168,10 @@ const ContactPage = () => {
                         Phone
                       </h3>
                       <p className="text-gray-600">
-                        <a href={CONTACT_INFO.PHONE.HREF} className="hover:underline">
+                        <a
+                          href={CONTACT_INFO.PHONE.HREF}
+                          className="hover:underline"
+                        >
                           {CONTACT_INFO.PHONE.DISPLAY}
                         </a>
                       </p>
@@ -161,7 +180,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-emerald-100 rounded-full">
+                    <div className="p-3 rounded-full bg-emerald-100">
                       <Mail className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
@@ -190,7 +209,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-amber-100 rounded-full">
+                    <div className="p-3 rounded-full bg-amber-100">
                       <MapPin className="w-6 h-6 text-amber-600" />
                     </div>
                     <div>
@@ -212,7 +231,9 @@ const ContactPage = () => {
                         >
                           {CONTACT_INFO.ADDRESS.STREET}
                           <br />
-                          {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE} {CONTACT_INFO.ADDRESS.ZIP}
+                          {CONTACT_INFO.ADDRESS.CITY},{" "}
+                          {CONTACT_INFO.ADDRESS.STATE}{" "}
+                          {CONTACT_INFO.ADDRESS.ZIP}
                         </a>
                       </p>
                     </div>
@@ -247,7 +268,7 @@ const ContactPage = () => {
 
             {/* Appointment Form */}
             <div id="appointment-section" className="lg:col-span-2">
-              <div className="p-8 bg-white rounded-2xl border border-gray-200 shadow-lg">
+              <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
                 <h2 className="mb-8 text-2xl font-bold text-gray-900">
                   Request an Appointment
                 </h2>
@@ -338,7 +359,7 @@ const ContactPage = () => {
                       Pet Information
                     </h3>
 
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2">
                       <div>
                         <label
                           htmlFor="petName"
@@ -379,6 +400,43 @@ const ContactPage = () => {
                       </div>
                     </div>
 
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                      <div>
+                        <label
+                          htmlFor="primaryVetName"
+                          className="block mb-2 text-sm font-medium text-gray-700"
+                        >
+                          Primary Vet Name
+                        </label>
+                        <input
+                          type="text"
+                          id="primaryVetName"
+                          name="primaryVetName"
+                          required
+                          value={formData.primaryVetName}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="petType"
+                          className="block mb-2 text-sm font-medium text-gray-700"
+                        >
+                          Primary Vet Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="primaryVetNumber"
+                          name="primaryVetNumber"
+                          required
+                          value={formData.primaryVetNumber}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                        />
+                      </div>
+                    </div>
+
                     <div className="mt-6">
                       <label
                         htmlFor="concern"
@@ -405,7 +463,7 @@ const ContactPage = () => {
                         <option value="injury">Injury/Trauma</option>
                         <option value="mobility">Mobility Issues</option>
                         <option value="pain-management">Pain Management</option>
-                        <option value="pain-management">Neurological</option>
+                        <option value="neurological">Neurological</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
@@ -417,7 +475,7 @@ const ContactPage = () => {
                       Appointment Preferences
                     </h3>
 
-                    <div className="grid grid-cols-1 gap-6 justify-center md:grid-cols-2">
+                    <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
                       <div className="flex flex-col">
                         <label
                           htmlFor="appointmentType"
@@ -442,22 +500,6 @@ const ContactPage = () => {
                           <option value="follow-up">Follow-up Visit</option>
                         </select>
                       </div>
-                      <div className="flex flex-col">
-                        <label
-                          htmlFor="preferredDate"
-                          className="block mb-2 text-sm font-medium text-gray-700"
-                        >
-                          Preferred Date
-                        </label>
-                        <input
-                          type="date"
-                          id="preferredDate"
-                          name="preferredDate"
-                          value={formData.preferredDate}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
-                        />
-                      </div>
                     </div>
                   </div>
 
@@ -476,7 +518,7 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Please share any additional details about your pet's condition, current medications, or specific concerns..."
-                      className="px-4 py-3 w-full rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     ></textarea>
                   </div>
 
@@ -492,7 +534,7 @@ const ContactPage = () => {
                       name="hearAboutUs"
                       value={formData.hearAboutUs}
                       onChange={handleInputChange}
-                      className="px-4 py-3 w-full rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="">Select an option</option>
                       <option value="veterinarian">
@@ -510,12 +552,15 @@ const ContactPage = () => {
                   {submitError && (
                     <div className="p-4 mt-4 text-red-700 bg-red-100 rounded-lg">
                       <div className="flex items-center mb-2">
-                        <AlertCircle className="mr-2 w-5 h-5" />
-                        <span className="font-medium">Error sending appointment request</span>
+                        <AlertCircle className="w-5 h-5 mr-2" />
+                        <span className="font-medium">
+                          Error sending appointment request
+                        </span>
                       </div>
                       <p className="text-sm">{submitError}</p>
                       <p className="mt-2 text-sm">
-                        Please try again or contact us directly at {CONTACT_INFO.PHONE.DISPLAY}
+                        Please try again or contact us directly at{" "}
+                        {CONTACT_INFO.PHONE.DISPLAY}
                       </p>
                     </div>
                   )}
@@ -526,14 +571,14 @@ const ContactPage = () => {
                       type="submit"
                       disabled={isSubmitting}
                       className={`flex items-center justify-center w-full px-8 py-4 space-x-2 font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg ${
-                        isSubmitting 
-                          ? "bg-blue-400 cursor-not-allowed" 
+                        isSubmitting
+                          ? "bg-blue-400 cursor-not-allowed"
                           : "bg-blue-600 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1"
                       }`}
                     >
                       {isSubmitting ? (
                         <>
-                          <span className="mr-2 w-5 h-5 rounded-full border-4 border-white animate-spin border-t-transparent"></span>
+                          <span className="w-5 h-5 mr-2 border-4 border-white rounded-full animate-spin border-t-transparent"></span>
                           <span>Sending Request...</span>
                         </>
                       ) : (
@@ -558,7 +603,7 @@ const ContactPage = () => {
       {/* Map & Directions */}
       <section className="py-20 bg-gray-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 Clinic Location
@@ -578,7 +623,7 @@ const ContactPage = () => {
                   href={CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white bg-blue-600 rounded-full transition-colors hover:bg-blue-700"
+                  className="inline-flex items-center px-6 py-3 space-x-2 font-semibold text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
                 >
                   <MapPin className="w-4 h-4" />
                   <span>Get Directions</span>
@@ -586,9 +631,9 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center h-96 bg-gray-200 rounded-2xl">
+            <div className="flex items-center justify-center bg-gray-200 h-96 rounded-2xl">
               <div className="text-center">
-                <MapPin className="mx-auto mb-4 w-12 h-12 text-gray-400" />
+                <MapPin className="w-12 h-12 mx-auto mb-4 text-gray-400" />
                 <p className="text-gray-600">
                   Interactive map would be embedded here
                 </p>
