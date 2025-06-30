@@ -67,7 +67,8 @@ const Footer = () => {
                   >
                     {CONTACT_INFO.ADDRESS.STREET}
                     <br />
-                    {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE} {CONTACT_INFO.ADDRESS.ZIP}
+                    {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE}{" "}
+                    {CONTACT_INFO.ADDRESS.ZIP}
                   </a>
                 </p>
               </div>
@@ -142,8 +143,8 @@ const Footer = () => {
 
         <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800">
           <p>
-            &copy; {new Date().getFullYear()} {PRACTICE_INFO.NAME}. All rights reserved. | Licensed
-            Veterinary Physical Therapy Practice
+            &copy; {new Date().getFullYear()} {PRACTICE_INFO.NAME}. All rights
+            reserved. | Licensed Physical Therapy Practice
           </p>
         </div>
       </div>

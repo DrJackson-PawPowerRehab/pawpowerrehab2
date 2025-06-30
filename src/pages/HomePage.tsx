@@ -24,9 +24,9 @@ const HomePage = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      pet: "Golden Retriever - Max",
-      text: "The therapy sessions helped Max recover completely from his hip surgery. The staff is incredibly caring and professional.",
+      name: "Amanda",
+      pet: "Grimm",
+      text: "Tommy has been amazing with our dog, Grimm, who was struggling with an old front leg injury. He not only treated him with care, but also researched bracing options and provided targeted exercises to improve his gait and comfort. We highly recommend Tommy—his expertise and compassion truly stand out.",
       rating: 5,
       photo: "openart-image_zBHZwxyl_1750798820686_raw.png",
     },
@@ -254,7 +254,7 @@ const HomePage = () => {
                   />
                 ))}
               </div>
-              <p className="mb-6 text-lg leading-relaxed text-center text-gray-800">
+              <p className="mb-3 text-lg leading-relaxed text-center text-gray-800">
                 "{testimonials[0].text}"
               </p>
               <div className="flex flex-col items-center">

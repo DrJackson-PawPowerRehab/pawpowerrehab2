@@ -90,19 +90,18 @@ const AboutPage = () => {
                 animal rehabilitation and therapy.
               </p>
               <p className="text-lg leading-relaxed text-gray-900">
-                Although Paw Power Rehab is a new practice, it’s built on a
-                strong foundation of clinical expertise, compassionate care, and
-                a deep commitment to improving quality of life. My extensive
-                background in human physical therapy allows me to bring a
-                seasoned, evidence-based approach to every animal I work with,
-                while I continue expanding my education specifically in
-                veterinary rehabilitation.
+                Paw Power Rehab is built on a strong foundation of clinical
+                expertise, compassionate care, and a deep commitment to
+                improving quality of life. My extensive background in human
+                physical therapy allows me to bring a seasoned, evidence-based
+                approach to every animal I work with, while I continue expanding
+                my education specifically in animal rehabilitation.
               </p>
             </div>
             <div className="relative">
               <img
                 src={clinicImage}
-                alt="Modern veterinary clinic interior with therapy equipment"
+                alt="Modern clinic interior with therapy equipment"
                 className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
               />
             </div>
@@ -221,7 +220,7 @@ const AboutPage = () => {
             </h2>
             <p className="text-xl leading-relaxed text-blue-100">
               Our team maintains the highest professional standards through
-              continuous education and certification with leading veterinary
+              continuous education and certification with leading animal
               rehabilitation organizations.
             </p>
             <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-4">

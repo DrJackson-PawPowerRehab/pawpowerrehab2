@@ -11,8 +11,36 @@ import {
 const ServicesPage = () => {
   const services = [
     {
-      icon: Heart,
-      title: "Dry Needling",
+      icon: Hand,
+      title: "Initial Consultation",
+      description:
+        "Comprehensive evaluation and hands-on techniques including massage, joint mobilization, and stretching.",
+      benefits: [
+        "Pain reduction and relaxation",
+        "Improved circulation",
+        "Enhanced flexibility",
+        "Reduced muscle tension",
+      ],
+      duration: "45-60 minutes",
+      price: "Starting at $170",
+    },
+    {
+      icon: Dumbbell,
+      title: "Follow-up Visit",
+      description:
+        "Continued therapy with customized exercise programs using specialized equipment and techniques.",
+      benefits: [
+        "Strength building",
+        "Balance improvement",
+        "Coordination enhancement",
+        "Endurance development",
+      ],
+      duration: "45-60 minutes",
+      price: "Starting at $120",
+    },
+    {
+      icon: MousePointerClick,
+      title: "Dry Needling Visit",
       description:
         "Targeted treatment using fine needles to relieve muscle tension and pain.",
       benefits: [
@@ -21,36 +49,8 @@ const ServicesPage = () => {
         "Enhanced blood flow",
         "Faster recovery from injuries",
       ],
-      duration: "30-45 minutes",
-      price: "Starting at $85",
-    },
-    {
-      icon: Hand,
-      title: "Manual Therapy",
-      description:
-        "Hands-on techniques including massage, joint mobilization, and stretching.",
-      benefits: [
-        "Pain reduction and relaxation",
-        "Improved circulation",
-        "Enhanced flexibility",
-        "Reduced muscle tension",
-      ],
       duration: "45-60 minutes",
-      price: "Starting at $75",
-    },
-    {
-      icon: Dumbbell,
-      title: "Therapeutic Exercise",
-      description:
-        "Customized exercise programs using specialized equipment and techniques.",
-      benefits: [
-        "Strength building",
-        "Balance improvement",
-        "Coordination enhancement",
-        "Endurance development",
-      ],
-      duration: "30-45 minutes",
-      price: "Starting at $70",
+      price: "Starting at $145",
     },
     {
       icon: Zap,
@@ -63,36 +63,9 @@ const ServicesPage = () => {
         "Accelerated tissue repair",
         "Non-invasive treatment",
       ],
-      duration: "15-20 minutes",
+      duration: "15-30 minutes",
       price: "Starting at $45",
-    },
-    {
-      icon: MousePointerClick,
-      title: "Post-Surgical Rehabilitation",
-      description:
-        "Comprehensive recovery programs following orthopedic and neurological surgeries.",
-      benefits: [
-        "Faster recovery times",
-        "Reduced complications",
-        "Optimal surgical outcomes",
-        "Pain management",
-      ],
-      duration: "45-60 minutes",
-      price: "Package pricing available",
-    },
-    {
-      icon: Clock,
-      title: "Chronic Condition Management",
-      description:
-        "Long-term therapy programs for arthritis, hip dysplasia, and other chronic conditions.",
-      benefits: [
-        "Improved quality of life",
-        "Slower disease progression",
-        "Enhanced mobility",
-        "Pain control",
-      ],
-      duration: "30-45 minutes",
-      price: "Monthly packages available",
+      packageAvailable: true,
     },
   ];
 
@@ -177,6 +150,11 @@ const ServicesPage = () => {
                           <div className="text-lg font-semibold text-blue-600">
                             {service.price}
                           </div>
+                          {service.packageAvailable && (
+                            <div className="text-sm text-gray-500">
+                              Packages available
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -218,12 +196,6 @@ const ServicesPage = () => {
                 alt="Dog receiving physical therapy treatment"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />
-              <div className="absolute p-6 bg-white shadow-xl -bottom-6 -right-6 rounded-2xl">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">98%</div>
-                  <div className="text-sm text-gray-600">Success Rate</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

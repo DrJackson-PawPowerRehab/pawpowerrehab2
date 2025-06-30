@@ -1,113 +1,131 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Search, Phone, Mail } from 'lucide-react';
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp, Search, Phone, Mail } from "lucide-react";
 
 const FAQPage = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(item => item !== index)
+    setOpenItems((prev) =>
+      prev.includes(index)
+        ? prev.filter((item) => item !== index)
         : [...prev, index]
     );
   };
 
   const faqCategories = [
     {
-      title: 'General Information',
+      title: "General Information",
       questions: [
         {
-          question: 'What is veterinary physical therapy?',
-          answer: 'Veterinary physical therapy is a specialized field that uses evidence-based techniques to help pets recover from injury, surgery, or manage chronic conditions. It includes manual therapy, therapeutic exercises, hydrotherapy, laser therapy, and other modalities to improve mobility, reduce pain, and enhance quality of life.'
+          question: "What is veterinary physical therapy?",
+          answer:
+            "Veterinary physical therapy is a specialized field that uses evidence-based techniques to help pets recover from injury, surgery, or manage chronic conditions. It includes manual therapy, therapeutic exercises, hydrotherapy, laser therapy, and other modalities to improve mobility, reduce pain, and enhance quality of life.",
         },
         {
-          question: 'How do I know if my pet needs physical therapy?',
-          answer: 'Physical therapy may benefit your pet if they are recovering from surgery, have been diagnosed with arthritis or hip dysplasia, show signs of pain or stiffness, have difficulty getting around, or are a senior pet experiencing mobility issues. Your veterinarian can help determine if physical therapy would be beneficial.'
+          question: "How do I know if my pet needs physical therapy?",
+          answer:
+            "Physical therapy may benefit your pet if they are recovering from surgery, have been diagnosed with arthritis or hip dysplasia, show signs of pain or stiffness, have difficulty getting around, or are a senior pet experiencing mobility issues. Your veterinarian can help determine if physical therapy would be beneficial.",
         },
         {
-          question: 'Is physical therapy safe for all pets?',
-          answer: 'Physical therapy is generally very safe when performed by trained professionals. However, we conduct a thorough evaluation before starting any treatment program. Some conditions may require modifications to the therapy approach, and we always work within your pet\'s comfort level and abilities.'
+          question: "Is physical therapy safe for all pets?",
+          answer:
+            "Physical therapy is generally very safe when performed by trained professionals. However, we conduct a thorough evaluation before starting any treatment program. Some conditions may require modifications to the therapy approach, and we always work within your pet's comfort level and abilities.",
         },
         {
-          question: 'How long does each session last?',
-          answer: 'Session length varies depending on the treatment type and your pet\'s condition. Most sessions range from 30-60 minutes. Initial evaluations typically take 60-90 minutes to allow for comprehensive assessment and treatment planning.'
-        }
-      ]
+          question: "How long does each session last?",
+          answer:
+            "Session length varies depending on the treatment type and your pet's condition. Most sessions range from 30-60 minutes. Initial evaluations typically take 60-90 minutes to allow for comprehensive assessment and treatment planning.",
+        },
+      ],
     },
     {
-      title: 'Treatment & Recovery',
+      title: "Treatment & Recovery",
       questions: [
         {
-          question: 'How many sessions will my pet need?',
-          answer: 'The number of sessions varies greatly depending on your pet\'s condition, age, and response to treatment. Some pets see improvement in just a few sessions, while others with chronic conditions may benefit from ongoing therapy. We typically reassess progress every 4-6 sessions and adjust the treatment plan accordingly.'
+          question: "How many sessions will my pet need?",
+          answer:
+            "The number of sessions varies greatly depending on your pet's condition, age, and response to treatment. Some pets see improvement in just a few sessions, while others with chronic conditions may benefit from ongoing therapy. We typically reassess progress every 4-6 sessions and adjust the treatment plan accordingly.",
         },
         {
-          question: 'When can my pet start therapy after surgery?',
-          answer: 'The timing depends on the type of surgery and your surgeon\'s recommendations. Some gentle therapies can begin as early as 2-5 days post-surgery, while others may need to wait 2-3 weeks. We always coordinate with your veterinary surgeon to ensure optimal timing.'
+          question: "When can my pet start therapy after surgery?",
+          answer:
+            "The timing depends on the type of surgery and your surgeon's recommendations. Some gentle therapies can begin as early as 2-5 days post-surgery, while others may need to wait 2-3 weeks. We always coordinate with your veterinary surgeon to ensure optimal timing.",
         },
         {
-          question: 'Will my pet be in pain during therapy?',
-          answer: 'Our goal is to reduce pain, not cause it. All treatments are designed to be comfortable and stress-free. We monitor your pet closely during sessions and adjust techniques as needed. Many pets actually enjoy their therapy sessions and show excitement when they arrive.'
+          question: "Will my pet be in pain during therapy?",
+          answer:
+            "Our goal is to reduce pain, not cause it. All treatments are designed to be comfortable and stress-free. We monitor your pet closely during sessions and adjust techniques as needed. Many pets actually enjoy their therapy sessions and show excitement when they arrive.",
         },
         {
-          question: 'Can I do exercises at home with my pet?',
-          answer: 'Yes! Home exercises are often an important part of the recovery process. We provide detailed instructions and demonstrations for safe, effective exercises you can do at home. These complement the professional treatments and help accelerate recovery.'
-        }
-      ]
+          question: "Can I do exercises at home with my pet?",
+          answer:
+            "Yes! Home exercises are often an important part of the recovery process. We provide detailed instructions and demonstrations for safe, effective exercises you can do at home. These complement the professional treatments and help accelerate recovery.",
+        },
+      ],
     },
     {
-      title: 'Appointments & Logistics',
+      title: "Appointments & Logistics",
       questions: [
         {
-          question: 'Do I need a referral from my veterinarian?',
-          answer: 'While we welcome referrals from veterinarians, they are not always required. However, we do recommend discussing physical therapy with your vet, especially if your pet has been diagnosed with a specific condition or had recent surgery.'
+          question: "Do I need a referral from my veterinarian?",
+          answer:
+            "While we welcome referrals from veterinarians, they are not always required. However, we do recommend discussing physical therapy with your vet, especially if your pet has been diagnosed with a specific condition or had recent surgery.",
         },
         {
-          question: 'What should I bring to the first appointment?',
-          answer: 'Please bring any recent medical records, X-rays, or surgical reports related to your pet\'s condition. Also bring a list of current medications and any specific concerns or questions you have. Your pet should come on a leash or in a carrier as appropriate.'
+          question: "What should I bring to the first appointment?",
+          answer:
+            "Please bring any recent medical records, X-rays, or surgical reports related to your pet's condition. Also bring a list of current medications and any specific concerns or questions you have. Your pet should come on a leash or in a carrier as appropriate.",
         },
         {
-          question: 'How should I prepare my pet for therapy?',
-          answer: 'Keep your pet calm and comfortable before the appointment. Avoid heavy meals 2 hours before the session. If your pet is anxious about new places, consider bringing a favorite toy or blanket. Let us know about any behavioral concerns when scheduling.'
+          question: "How should I prepare my pet for therapy?",
+          answer:
+            "Keep your pet calm and comfortable before the appointment. Avoid heavy meals 2 hours before the session. If your pet is anxious about new places, consider bringing a favorite toy or blanket. Let us know about any behavioral concerns when scheduling.",
         },
         {
-          question: 'What if my pet doesn\'t cooperate during therapy?',
-          answer: 'Our team is experienced in working with anxious or uncooperative pets. We use positive reinforcement, go at your pet\'s pace, and may modify techniques to accommodate their comfort level. In some cases, we may recommend conditioning visits to help your pet become comfortable with the environment.'
-        }
-      ]
+          question: "What if my pet doesn't cooperate during therapy?",
+          answer:
+            "Our team is experienced in working with anxious or uncooperative pets. We use positive reinforcement, go at your pet's pace, and may modify techniques to accommodate their comfort level. In some cases, we may recommend conditioning visits to help your pet become comfortable with the environment.",
+        },
+      ],
     },
     {
-      title: 'Costs & Insurance',
+      title: "Costs & Insurance",
       questions: [
         {
-          question: 'How much does physical therapy cost?',
-          answer: 'Costs vary depending on the type and length of treatment. Individual sessions typically range from $70-120, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.'
+          question: "How much does physical therapy cost?",
+          answer:
+            "Costs vary depending on the type and length of treatment. Individual sessions typically range from $70-120, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
         },
         {
-          question: 'Does pet insurance cover physical therapy?',
-          answer: 'Many pet insurance policies do cover physical therapy, especially when medically necessary. Coverage varies by provider and policy. We recommend checking with your insurance company and can provide documentation to support your claims.'
+          question: "Does pet insurance cover physical therapy?",
+          answer:
+            "Many pet insurance policies do cover physical therapy, especially when medically necessary. Coverage varies by provider and policy. We recommend checking with your insurance company and can provide documentation to support your claims.",
         },
         {
-          question: 'Do you offer payment plans?',
-          answer: 'Yes, we understand that veterinary care can be expensive. We offer flexible payment options and can discuss payment plans for extended treatment programs. Our goal is to make therapy accessible for pets who need it.'
+          question: "Do you offer payment plans?",
+          answer:
+            "Yes, we understand that veterinary care can be expensive. We offer flexible payment options and can discuss payment plans for extended treatment programs. Our goal is to make therapy accessible for pets who need it.",
         },
         {
-          question: 'Are there any additional costs I should expect?',
-          answer: 'The treatment fee typically covers all therapy provided during the session. Additional costs might include specialized equipment for home use or follow-up consultations. We always discuss any additional recommendations and costs before proceeding.'
-        }
-      ]
-    }
+          question: "Are there any additional costs I should expect?",
+          answer:
+            "The treatment fee typically covers all therapy provided during the session. Additional costs might include specialized equipment for home use or follow-up consultations. We always discuss any additional recommendations and costs before proceeding.",
+        },
+      ],
+    },
   ];
 
-  const filteredFAQs = faqCategories.map(category => ({
-    ...category,
-    questions: category.questions.filter(
-      faq => 
-        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  })).filter(category => category.questions.length > 0);
+  const filteredFAQs = faqCategories
+    .map((category) => ({
+      ...category,
+      questions: category.questions.filter(
+        (faq) =>
+          faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    }))
+    .filter((category) => category.questions.length > 0);
 
   return (
     <div className="">
@@ -119,7 +137,7 @@ const FAQPage = () => {
               Frequently Asked Questions
             </h1>
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
-              Find answers to common questions about pet physical therapy, 
+              Find answers to common questions about pet physical therapy,
               treatment options, and what to expect during your visit.
             </p>
           </div>
@@ -145,7 +163,10 @@ const FAQPage = () => {
         <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
           {filteredFAQs.length === 0 ? (
             <div className="py-12 text-center">
-              <p className="text-lg text-gray-600">No results found for "{searchTerm}". Try a different search term.</p>
+              <p className="text-lg text-gray-600">
+                No results found for "{searchTerm}". Try a different search
+                term.
+              </p>
             </div>
           ) : (
             <div className="space-y-12">
@@ -158,7 +179,7 @@ const FAQPage = () => {
                     {category.questions.map((faq, questionIndex) => {
                       const globalIndex = categoryIndex * 100 + questionIndex;
                       const isOpen = openItems.includes(globalIndex);
-                      
+
                       return (
                         <div
                           key={questionIndex}
@@ -205,8 +226,9 @@ const FAQPage = () => {
               Still Have Questions?
             </h2>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-              Our friendly team is here to help. Don't hesitate to reach out 
-              with any concerns about your pet's health and rehabilitation needs.
+              Our friendly team is here to help. Don't hesitate to reach out
+              with any concerns about your pet's health and rehabilitation
+              needs.
             </p>
           </div>
 
@@ -215,7 +237,9 @@ const FAQPage = () => {
               <div className="p-4 mx-auto mb-6 bg-blue-100 rounded-full w-fit">
                 <Phone className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-4 text-xl font-semibold text-gray-900">Call Us</h3>
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                Call Us
+              </h3>
               <p className="mb-4 text-gray-600">
                 Speak directly with our team about your pet's needs
               </p>
@@ -231,7 +255,9 @@ const FAQPage = () => {
               <div className="p-4 mx-auto mb-6 rounded-full bg-emerald-100 w-fit">
                 <Mail className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="mb-4 text-xl font-semibold text-gray-900">Email Us</h3>
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                Email Us
+              </h3>
               <p className="mb-4 text-gray-600">
                 Send us your questions and we'll respond promptly
               </p>
@@ -247,7 +273,9 @@ const FAQPage = () => {
               <div className="p-4 mx-auto mb-6 rounded-full bg-amber-100 w-fit">
                 <Phone className="w-8 h-8 text-amber-600" />
               </div>
-              <h3 className="mb-4 text-xl font-semibold text-gray-900">Schedule Consultation</h3>
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                Schedule Consultation
+              </h3>
               <p className="mb-4 text-gray-600">
                 Book a consultation to discuss your pet's specific needs
               </p>
@@ -266,14 +294,17 @@ const FAQPage = () => {
       <section className="py-12 border-l-4 border-red-500 bg-red-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="mb-2 text-xl font-semibold text-red-900">Emergency Situations</h3>
+            <h3 className="mb-2 text-xl font-semibold text-red-900">
+              Emergency Situations
+            </h3>
             <p className="mb-4 text-red-700">
-              For after-hours emergencies, please contact your primary veterinarian or nearest emergency clinic. 
-              Physical therapy services are not appropriate for acute medical emergencies.
+              For after-hours emergencies, please contact your primary
+              veterinarian or nearest emergency clinic. Physical therapy
+              services are not appropriate for acute medical emergencies.
             </p>
             <p className="text-sm text-red-600">
-              If your pet is experiencing severe pain, difficulty breathing, or other emergency symptoms, 
-              seek immediate veterinary care.
+              If your pet is experiencing severe pain, difficulty breathing, or
+              other emergency symptoms, seek immediate veterinary care.
             </p>
           </div>
         </div>
