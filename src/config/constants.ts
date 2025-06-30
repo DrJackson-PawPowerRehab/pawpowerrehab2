@@ -23,5 +23,5 @@ export const CONTACT_INFO = {
 
 export const PRACTICE_INFO = {
   NAME: "Paw Power Rehab",
-  TAGLINE: "Specialized Physical Rehabilitation for Pets"
+  TAGLINE: "Animal Physical Therapy",
 }; 

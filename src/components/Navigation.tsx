@@ -10,7 +10,7 @@ const Navigation = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/services", label: "Services" },
-    { path: "/blog", label: "Blog" },
+    // { path: "/blog", label: "Blog" },
     { path: "/faq", label: "FAQ" },
     { path: "/contact", label: "Contact" },
   ];
@@ -23,14 +23,14 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="p-2 transition-transform duration-300 bg-blue-600 rounded-full">
+            <div className="p-2 transition-transform duration-300 rounded-full bg-primary">
               <PawPrint className="w-6 h-6 text-white transition-transform duration-300 hover:-rotate-90" />
             </div>
             <div>
               <div className="text-xl font-bold text-gray-900">
                 Paw Power Rehab
               </div>
-              <div className="text-sm text-blue-600">
+              <div className="text-sm text-primary">
                 Animal Physical Therapy
               </div>
             </div>
@@ -44,8 +44,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                    ? "text-primary bg-primary10"
+                    : "text-gray-700 hover:text-primary hover:bg-primary10"
                 }`}
               >
                 {item.label}
@@ -53,7 +53,7 @@ const Navigation = () => {
             ))}
             <Link
               to="/contact"
-              className="px-6 py-2 font-medium text-white transition-colors duration-200 rounded-full bg-emerald-600 hover:bg-emerald-700"
+              className="px-6 py-2 font-medium text-white transition-colors duration-200 rounded-full bg-primary hover:bg-primaryHover"
             >
               Book Appointment
             </Link>
@@ -63,7 +63,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
+              className="text-gray-700 transition-colors duration-200"
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
@@ -85,8 +85,8 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                      ? "text-primary bg-primary10"
+                      : "text-gray-700 hover:text-primary hover:bg-primary10"
                   }`}
                 >
                   {item.label}
@@ -95,7 +95,7 @@ const Navigation = () => {
               <Link
                 to="/contact#appointment-form"
                 onClick={() => setIsOpen(false)}
-                className="block w-full px-4 py-2 mt-4 font-medium text-center text-white transition-colors duration-200 rounded-full bg-emerald-600 hover:bg-emerald-700"
+                className="block w-full px-4 py-2 mt-4 font-medium text-center text-white transition-colors duration-200 rounded-full bg-primary hover:bg-primaryHover"
               >
                 Book Appointment
               </Link>
