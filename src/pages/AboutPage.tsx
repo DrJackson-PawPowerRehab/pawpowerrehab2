@@ -1,7 +1,7 @@
 import { Award, Heart, Users, BookOpen } from "lucide-react";
 
 // Import images to ensure proper bundling
-import clinicImage from "/openart-image_P4_BeiZw_1750798712020_raw.png";
+import dogImage2 from "/openart-image_P4_BeiZw_1750798712020_raw.png";
 import dogImage from "/openart-image_Wo-j3pil_1750798839504_raw.png";
 
 const AboutPage = () => {
@@ -9,8 +9,8 @@ const AboutPage = () => {
     {
       name: "Dr. Thomas Jackson",
       title: "Lead Physical Therapist",
-      credentials: "PT, DPT, Cert. DN, Cert. SMT, Dip",
-      image: "",
+      credentials: "PT, DPT, Cert. DN, Cert. SMT, Dip Osteopractic",
+      image: "tommy.webp",
       bio: "With over a decade of experience in physical therapy, Dr. Jackson specializes in rehabilitation. He is driven by his passion for animal welfare and is committed to providing the highest quality care for pets in need of rehabilitation.",
     },
   ];
@@ -100,8 +100,8 @@ const AboutPage = () => {
             </div>
             <div className="relative">
               <img
-                src={clinicImage}
-                alt="Modern clinic interior with therapy equipment"
+                src={dogImage2}
+                alt="A happy dog"
                 className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
               />
             </div>
@@ -190,9 +190,9 @@ const AboutPage = () => {
               >
                 <div className="mb-4">
                   <img
-                    src={clinicImage}
+                    src={member.image}
                     alt={member.name}
-                    className="object-cover w-40 h-40 border-4 border-blue-100 rounded-full shadow-md"
+                    className="object-cover w-40 h-40 border-4 border-blue-100 shadow-md rounded-2xl"
                   />
                 </div>
                 <h3 className="mb-1 text-2xl font-bold text-primary">
@@ -247,7 +247,9 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="p-6 bg-white bg-opacity-10 rounded-xl">
-                <div className="mb-2 text-2xl font-bold text-white">Dip</div>
+                <div className="mb-2 text-xl font-bold text-white">
+                  Dip Osteopractic
+                </div>
                 <div className="text-blue-100">Diploma in Osteopractic</div>
               </div>
             </div>
