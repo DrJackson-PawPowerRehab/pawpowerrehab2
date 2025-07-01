@@ -69,7 +69,7 @@ const ServicesPage = () => {
   ];
 
   const conditions = [
-    "Post-surgical recovery (ACL, hip replacement, spinal surgery)",
+    "Post-surgical recovery",
     "Arthritis and joint pain",
     "Hip / Elbow dysplasia",
     "Spinal cord injuries",
@@ -171,7 +171,7 @@ const ServicesPage = () => {
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
-                Conditions We Treat
+                Conditions we treat
               </h2>
               <p className="mb-8 text-lg leading-relaxed text-gray-600">
                 Our experienced team has successfully treated a wide range of

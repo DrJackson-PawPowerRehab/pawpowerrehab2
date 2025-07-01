@@ -36,7 +36,7 @@ const HomePage = () => {
       pet: "Grimm",
       text: "Tommy has been amazing with our dog, Grimm, who was struggling with an old front leg injury. He not only treated him with care, but also researched bracing options and provided targeted exercises to improve his gait and comfort. We highly recommend Tommy—his expertise and compassion truly stand out.",
       rating: 5,
-      photo: "openart-image_zBHZwxyl_1750798820686_raw.png",
+      photo: "grimm.png",
     },
   ];
 
@@ -45,7 +45,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-emerald-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-12 py-20 lg:grid-cols-2">
+          <div className="grid items-center grid-cols-1 gap-12 py-6 sm:py-20 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
                 <h1 className="text-4xl font-bold leading-tight text-gray-900 lg:text-6xl">
@@ -92,15 +92,15 @@ const HomePage = () => {
             <div className="relative">
               <div className="overflow-hidden shadow-2xl aspect-w-4 aspect-h-3 rounded-2xl">
                 <img
-                  src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="tommy.webp"
                   alt="Happy golden retriever receiving physical therapy"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full object-fit"
                 />
               </div>
-              <div className="absolute p-6 bg-white shadow-xl -bottom-6 -left-6 rounded-2xl">
+              <div className="absolute p-4 bg-white shadow-xl sm:p-6 -bottom-6 -left-6 rounded-2xl">
                 <div className="flex items-center space-x-3">
-                  <div className="p-3 rounded-full bg-secondary">
-                    <Heart className="w-8 h-8 text-white" />
+                  <div className="p-2 rounded-full sm:p-3 bg-secondary">
+                    <Heart className="w-6 h-6 text-white sm:w-8 sm:h-8" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">
@@ -253,7 +253,7 @@ const HomePage = () => {
               <img
                 src={testimonials[0].photo}
                 alt={testimonials[0].name}
-                className="object-cover w-56 h-56 mb-6 border-4 shadow rounded-3xl "
+                className="w-56 mb-6 border-4 shadow object-fit rounded-3xl "
               />
               <div className="flex items-center mb-4 space-x-1">
                 {[...Array(testimonials[0].rating)].map((_, i) => (
