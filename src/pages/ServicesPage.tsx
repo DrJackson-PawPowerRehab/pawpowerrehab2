@@ -4,6 +4,7 @@ import {
   Dumbbell,
   Zap,
   CheckCircle,
+  Stethoscope,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -21,7 +22,7 @@ const ServicesPage = () => {
         "Reduced muscle tension",
       ],
       duration: "45-60 minutes",
-      price: "Starting at $170",
+      price: "$185",
     },
     {
       icon: Dumbbell,
@@ -34,8 +35,8 @@ const ServicesPage = () => {
         "Coordination enhancement",
         "Endurance development",
       ],
-      duration: "45-60 minutes",
-      price: "Starting at $120",
+      duration: "30-45 minutes",
+      price: "$135",
     },
     {
       icon: MousePointerClick,
@@ -48,23 +49,20 @@ const ServicesPage = () => {
         "Enhanced blood flow",
         "Faster recovery from injuries",
       ],
-      duration: "45-60 minutes",
-      price: "Starting at $145",
+      duration: "30-45 minutes",
+      price: "$150",
     },
     {
-      icon: Zap,
-      title: "Laser Therapy",
+      icon: Stethoscope,
+      title: "6-Session Bundle",
       description:
-        "Class IV laser therapy for pain relief and accelerated healing.",
+        "Packages available for comprehensive pain relief and accelerated healing.",
       benefits: [
-        "Reduced inflammation",
-        "Pain management",
-        "Accelerated tissue repair",
-        "Non-invasive treatment",
+        "Save $100 when purchasing as a bundle",
+        "Consistent results with regular treatments",
+        "Ideal for chronic pain or post-surgical recovery",
       ],
-      duration: "15-30 minutes",
-      price: "Starting at $45",
-      packageAvailable: true,
+      price: "Starting at $710",
     },
   ];
 
@@ -141,19 +139,16 @@ const ServicesPage = () => {
 
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                         <div className="text-sm text-gray-500">
-                          <div className="font-medium">
-                            Duration: {service.duration}
-                          </div>
+                          {service.duration && (
+                            <div className="font-medium">
+                              Duration: {service.duration}
+                            </div>
+                          )}
                         </div>
                         <div className="text-right">
                           <div className="text-lg font-semibold text-secondary">
                             {service.price}
                           </div>
-                          {service.packageAvailable && (
-                            <div className="text-sm text-gray-500">
-                              Packages available
-                            </div>
-                          )}
                         </div>
                       </div>
                     </div>
@@ -191,7 +186,7 @@ const ServicesPage = () => {
 
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/photo-1.jpg"
                 alt="Dog receiving physical therapy treatment"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />

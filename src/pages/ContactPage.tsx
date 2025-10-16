@@ -217,7 +217,7 @@ const ContactPage = () => {
                         Location
                       </h3>
                       <p className="text-gray-600">
-                        Cohutta Animal Clinic
+                        {CONTACT_INFO.ADDRESS.CLINIC_NAME}
                         <br />
                         <a
                           href={

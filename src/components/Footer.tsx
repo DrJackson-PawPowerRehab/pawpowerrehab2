@@ -52,7 +52,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white" />
                 <p className="">
-                  Cohutta Animal Clinic
+                  {CONTACT_INFO.ADDRESS.CLINIC_NAME}
                   <br />
                   <a
                     href={

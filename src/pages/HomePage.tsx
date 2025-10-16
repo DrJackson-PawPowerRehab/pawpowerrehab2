@@ -227,7 +227,7 @@ const HomePage = () => {
 
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/photo-4.jpg"
                 alt="Veterinary therapist with happy dog"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />

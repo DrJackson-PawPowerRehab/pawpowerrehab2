@@ -1,15 +1,15 @@
 import { Award, Heart, Users, BookOpen } from "lucide-react";
 
 // Import images to ensure proper bundling
-import dogImage2 from "/openart-image_P4_BeiZw_1750798712020_raw.png";
-import dogImage from "/openart-image_Wo-j3pil_1750798839504_raw.png";
+import dogImage2 from "/photo-2.jpg";
+import dogImage from "/photo-3.jpg";
 
 const AboutPage = () => {
   const team = [
     {
       name: "Dr. Thomas Jackson",
       title: "Lead Physical Therapist",
-      credentials: "PT, DPT, Cert. DN, Cert. SMT, Dip Osteopractic",
+      credentials: "PT, DPT, Cert. DN, Cert. SMT, Dip Osteopractic, CCAT",
       image: "tommy.webp",
       bio: "With over a decade of experience in physical therapy, Dr. Jackson specializes in rehabilitation. He is driven by his passion for animal welfare and is committed to providing the highest quality care for pets in need of rehabilitation.",
     },
@@ -102,7 +102,7 @@ const AboutPage = () => {
               <img
                 src={dogImage2}
                 alt="A happy dog"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
+                className="w-full h-[800px] object-cover rounded-2xl shadow-xl"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ const AboutPage = () => {
               <img
                 src={dogImage}
                 alt="A dog"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
+                className="object-top w-full shadow-xl rounded-2xl"
               />
             </div>
             <div className="order-1 space-y-6 lg:order-2">
@@ -223,7 +223,7 @@ const AboutPage = () => {
               continuous education and certification with leading animal
               rehabilitation organizations.
             </p>
-            <div className="grid justify-center grid-cols-1 gap-8 mt-12 md:grid-cols-5">
+            <div className="grid justify-center grid-cols-1 gap-8 mt-12 md:grid-cols-6">
               <div className="p-6 bg-white bg-opacity-10 rounded-xl">
                 <div className="mb-2 text-2xl font-bold text-white">PT</div>
                 <div className="text-blue-100">Physical Therapist</div>
@@ -251,6 +251,12 @@ const AboutPage = () => {
                   Dip Osteopractic
                 </div>
                 <div className="text-blue-100">Diploma in Osteopractic</div>
+              </div>
+              <div className="p-6 bg-white bg-opacity-10 rounded-xl">
+                <div className="mb-2 text-xl font-bold text-white">CCAT</div>
+                <div className="text-blue-100">
+                  Certified Companion Animal Therapist
+                </div>
               </div>
             </div>
           </div>

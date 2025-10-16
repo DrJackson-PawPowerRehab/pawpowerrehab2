@@ -9,12 +9,13 @@ export const CONTACT_INFO = {
     ADMIN: "Admin@pawpowerrehab.com"
   },
   ADDRESS: {
-    STREET: "24 Lance Street",
+    CLINIC_NAME: "Humane Society of Blue Ridge",
+    STREET: "171 Mineral Springs Rd",
     CITY: "Blue Ridge",
     STATE: "GA",
     ZIP: "30513",
-    FULL: "24 Lance Street Blue Ridge, GA 30513",
-    GOOGLE_MAPS_URL: "https://www.google.com/maps/place/24+Lance+St,+Blue+Ridge,+GA+30513/@34.8743489,-84.3035238,17z/data=!3m1!4b1!4m6!3m5!1s0x885fa7ba9a7d3cc9:0x984e8d2f8d52ab14!8m2!3d34.8743445!4d-84.3009435!16s%2Fg%2F11vqmktgz5?entry=ttu"
+    FULL: "Humane Society of Blue Ridge 171 Mineral Springs Rd, Blue Ridge, GA 30513",
+    GOOGLE_MAPS_URL: "https://www.google.com/maps/place/171+Mineral+Springs+Rd,+Blue+Ridge,+GA+30513"
   },
   HOURS: {
     STATUS: "By Appointment Only"

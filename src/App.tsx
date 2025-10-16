@@ -14,6 +14,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogPost from "./pages/BlogPost";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
+import VeterinariansPage from "./pages/VeterinariansPage";
 
 // Scroll to hash if present
 function ScrollToHash() {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/veterinarians" element={<VeterinariansPage />} />
           </Routes>
         </main>
         <Footer />

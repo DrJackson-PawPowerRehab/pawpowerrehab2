@@ -72,7 +72,7 @@ const FAQPage = () => {
         {
           question: "Do I need a referral from my veterinarian?",
           answer:
-            "While we welcome referrals and records from your current veterinarian, our Initial Consultation will be accompanied by an assessment from our on-site veterinarian in accordance to state practice guidelines for animal physical therapy.",
+            "We welcome and encourage referrals from your veterinarian to support open communication and collaboration between our team and your pet’s primary care provider. If you do not currently have a veterinarian, we can help facilitate a relationship with a trusted local veterinary care provider.",
         },
         {
           question: "What should I bring to the first appointment?",
@@ -97,17 +97,12 @@ const FAQPage = () => {
         {
           question: "How much does physical therapy cost?",
           answer:
-            "Costs vary depending on the type and length of treatment. Individual sessions typically range from $120-145, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
+            "Costs vary depending on the type and length of treatment. Individual sessions typically begin at $135, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
         },
         {
           question: "Does pet insurance cover physical therapy?",
           answer:
             "Many pet insurance policies do cover physical therapy, especially when medically necessary. Coverage varies by provider and policy. We recommend checking with your insurance company and can provide documentation to support your claims.",
-        },
-        {
-          question: "Do you offer payment plans?",
-          answer:
-            "Yes, we understand that veterinary care can be expensive. We offer flexible payment options and can discuss payment plans for extended treatment programs. Our goal is to make therapy accessible for pets who need it.",
         },
         {
           question: "Are there any additional costs I should expect?",
