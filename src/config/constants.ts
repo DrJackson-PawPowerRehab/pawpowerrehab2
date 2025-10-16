@@ -9,6 +9,7 @@ export const CONTACT_INFO = {
     ADMIN: "Admin@pawpowerrehab.com"
   },
   ADDRESS: {
+    CLINIC_NAME: "Humane Society of Blue Ridge",
     STREET: "171 Mineral Springs Rd",
     CITY: "Blue Ridge",
     STATE: "GA",
