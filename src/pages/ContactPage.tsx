@@ -208,7 +208,7 @@ const ContactPage = () => {
                           {CONTACT_INFO.EMAIL.ADMIN}
                         </a>
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-gray-600">
                         We will respond within 24 hours
                       </p>
                     </div>
