@@ -222,7 +222,7 @@ const ContactPage = () => {
                       <h3 className="mb-1 font-semibold text-gray-900">
                         Location
                       </h3>
-                      <p>
+                      <p className="text-sm text-gray-500">
                         Blairsville, Blue Ridge, and surrounding North Georgia
                         areas
                       </p>
