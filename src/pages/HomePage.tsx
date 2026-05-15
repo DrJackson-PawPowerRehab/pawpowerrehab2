@@ -49,13 +49,14 @@ const HomePage = () => {
             <div className="space-y-8">
               <div>
                 <h1 className="text-4xl font-bold leading-tight text-gray-900 lg:text-6xl">
-                  Healing your pet,
-                  <span className="text-accent"> one step</span> at a time
+                  Helping pets move,
+                  <span className="text-accent"> heal,</span> and thrive
                 </h1>
                 <p className="mt-6 text-xl leading-relaxed text-gray-600">
-                  Expert physical therapy and rehabilitation services to help
-                  your beloved companion recover from injury, surgery, or
-                  chronic conditions with compassionate, professional care.
+                  Fully mobile canine rehabilitation and physical therapy
+                  services delivered in the comfort of your pet’s home.
+                  Personalized care designed to support recovery, mobility, and
+                  quality of life.
                 </p>
               </div>
 
