@@ -208,7 +208,7 @@ const ContactPage = () => {
                           {CONTACT_INFO.EMAIL.ADMIN}
                         </a>
                       </p>
-                      <p className="text-gray-600">
+                      <p className="text-sm text-gray-500">
                         We will respond within 24 hours
                       </p>
                     </div>
@@ -222,7 +222,7 @@ const ContactPage = () => {
                       <h3 className="mb-1 font-semibold text-gray-900">
                         Location
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-gray-600">
                         Blairsville, Blue Ridge, and surrounding North Georgia
                         areas
                       </p>
