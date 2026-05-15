@@ -18,6 +18,7 @@ const ContactPage = () => {
     phone: "",
     homeAddress: "",
     city: "",
+    state: "",
     zipCode: "",
     petName: "",
     primaryVetName: "",
@@ -92,6 +93,7 @@ const ContactPage = () => {
           phone: "",
           homeAddress: "",
           city: "",
+          state: "",
           zipCode: "",
           petName: "",
           primaryVetName: "",
@@ -361,7 +363,7 @@ const ContactPage = () => {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                     <div>
                       <label
                         htmlFor="city"
@@ -375,6 +377,23 @@ const ContactPage = () => {
                         name="city"
                         required
                         value={formData.city}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="state"
+                        className="block mb-2 text-sm font-medium text-gray-700"
+                      >
+                        State *
+                      </label>
+                      <input
+                        type="text"
+                        id="state"
+                        name="state"
+                        required
+                        value={formData.state}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
