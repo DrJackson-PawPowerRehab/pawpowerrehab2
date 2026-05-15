@@ -51,24 +51,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white" />
-                <p className="">
-                  {CONTACT_INFO.ADDRESS.CLINIC_NAME}
-                  <br />
-                  <a
-                    href={
-                      /iPhone|iPad|iPod/i.test(navigator.userAgent)
-                        ? `maps://maps.apple.com/?q=${CONTACT_INFO.ADDRESS.FULL}`
-                        : CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    {CONTACT_INFO.ADDRESS.STREET}
-                    <br />
-                    {CONTACT_INFO.ADDRESS.CITY}, {CONTACT_INFO.ADDRESS.STATE}{" "}
-                    {CONTACT_INFO.ADDRESS.ZIP}
-                  </a>
+                <p>
+                  Blairsville, Blue Ridge, and surrounding North Georgia areas
                 </p>
               </div>
             </div>

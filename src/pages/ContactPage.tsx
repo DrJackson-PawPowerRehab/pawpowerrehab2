@@ -16,6 +16,9 @@ const ContactPage = () => {
     lastName: "",
     email: "",
     phone: "",
+    homeAddress: "",
+    city: "",
+    zipCode: "",
     petName: "",
     primaryVetName: "",
     primaryVetNumber: "",
@@ -33,7 +36,7 @@ const ContactPage = () => {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -63,7 +66,7 @@ const ContactPage = () => {
       } catch (err: unknown) {
         console.error("Error parsing JSON response:", err);
         throw new Error(
-          `Failed to parse response: ${err instanceof Error ? err.message : "Unknown error"}`
+          `Failed to parse response: ${err instanceof Error ? err.message : "Unknown error"}`,
         );
       }
 
@@ -73,7 +76,7 @@ const ContactPage = () => {
         throw new Error(
           result?.details ||
             result?.error ||
-            "Failed to send appointment request"
+            "Failed to send appointment request",
         );
       }
 
@@ -87,6 +90,9 @@ const ContactPage = () => {
           lastName: "",
           email: "",
           phone: "",
+          homeAddress: "",
+          city: "",
+          zipCode: "",
           petName: "",
           primaryVetName: "",
           primaryVetNumber: "",
@@ -100,7 +106,7 @@ const ContactPage = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitError(
-        error instanceof Error ? error.message : "An unknown error occurred"
+        error instanceof Error ? error.message : "An unknown error occurred",
       );
     } finally {
       setIsSubmitting(false);
@@ -216,25 +222,9 @@ const ContactPage = () => {
                       <h3 className="mb-1 font-semibold text-gray-900">
                         Location
                       </h3>
-                      <p className="text-gray-600">
-                        {CONTACT_INFO.ADDRESS.CLINIC_NAME}
-                        <br />
-                        <a
-                          href={
-                            /iPhone|iPad|iPod/i.test(navigator.userAgent)
-                              ? `maps://maps.apple.com/?q=${CONTACT_INFO.ADDRESS.FULL}`
-                              : CONTACT_INFO.ADDRESS.GOOGLE_MAPS_URL
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                        >
-                          {CONTACT_INFO.ADDRESS.STREET}
-                          <br />
-                          {CONTACT_INFO.ADDRESS.CITY},{" "}
-                          {CONTACT_INFO.ADDRESS.STATE}{" "}
-                          {CONTACT_INFO.ADDRESS.ZIP}
-                        </a>
+                      <p>
+                        Blairsville, Blue Ridge, and surrounding North Georgia
+                        areas
                       </p>
                     </div>
                   </div>
@@ -347,6 +337,61 @@ const ContactPage = () => {
                         name="phone"
                         required
                         value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="homeAddress"
+                      className="block mb-2 text-sm font-medium text-gray-700"
+                    >
+                      Home Address *
+                    </label>
+                    <input
+                      type="text"
+                      id="homeAddress"
+                      name="homeAddress"
+                      required
+                      value={formData.homeAddress}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="city"
+                        className="block mb-2 text-sm font-medium text-gray-700"
+                      >
+                        City *
+                      </label>
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        required
+                        value={formData.city}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="zipCode"
+                        className="block mb-2 text-sm font-medium text-gray-700"
+                      >
+                        Zip Code *
+                      </label>
+                      <input
+                        type="text"
+                        id="zipCode"
+                        name="zipCode"
+                        required
+                        value={formData.zipCode}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none h-[50px]"
                       />
