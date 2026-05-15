@@ -11,7 +11,7 @@ const FAQPage = () => {
     setOpenItems((prev) =>
       prev.includes(index)
         ? prev.filter((item) => item !== index)
-        : [...prev, index]
+        : [...prev, index],
     );
   };
 
@@ -38,6 +38,26 @@ const FAQPage = () => {
           question: "How long does each session last?",
           answer:
             "Session length varies depending on the treatment type and your pet's condition. Most sessions range from 30-60 minutes. Initial evaluations typically take 60-90 minutes to allow for comprehensive assessment and treatment planning.",
+        },
+      ],
+    },
+    {
+      title: "Location & Service Area",
+      questions: [
+        {
+          question: "Do you have a clinic location?",
+          answer:
+            "Paw Power Rehab is a fully mobile canine rehabilitation service. We travel to clients' homes to provide one-on-one therapy sessions in a familiar, comfortable environment for your pet.",
+        },
+        {
+          question: "Why are sessions performed in the home?",
+          answer:
+            "Many dogs are calmer and more successful working in their home environment, especially after surgery, injury, or during senior care. Mobile visits also allow us to tailor exercises and mobility recommendations to your pet's real daily environment.",
+        },
+        {
+          question: "What areas do you serve?",
+          answer:
+            "We currently provide mobile services throughout Blairsville, Blue Ridge, and surrounding North Georgia areas.",
         },
       ],
     },
@@ -95,11 +115,6 @@ const FAQPage = () => {
       title: "Costs & Insurance",
       questions: [
         {
-          question: "How much does physical therapy cost?",
-          answer:
-            "Costs vary depending on the type and length of treatment. Individual sessions typically begin at $135, with package deals available for multiple sessions. We provide detailed estimates after the initial evaluation and work with you to create an affordable treatment plan.",
-        },
-        {
           question: "Does pet insurance cover physical therapy?",
           answer:
             "Many pet insurance policies do cover physical therapy, especially when medically necessary. Coverage varies by provider and policy. We recommend checking with your insurance company and can provide documentation to support your claims.",
@@ -119,7 +134,7 @@ const FAQPage = () => {
       questions: category.questions.filter(
         (faq) =>
           faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+          faq.answer.toLowerCase().includes(searchTerm.toLowerCase()),
       ),
     }))
     .filter((category) => category.questions.length > 0);

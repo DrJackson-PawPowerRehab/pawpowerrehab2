@@ -39,6 +39,7 @@ export const handler = async function(event, context) {
       <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Phone:</strong> ${data.phone}</p>
+      <p><strong>Address:</strong> ${data.homeAddress}, ${data.city}, ${data.state} ${data.zipCode}</p>
       
       <h2>Pet Information:</h2>
       <p><strong>Pet Name:</strong> ${data.petName}</p>
@@ -65,6 +66,7 @@ export const handler = async function(event, context) {
       Name: ${data.firstName} ${data.lastName}
       Email: ${data.email}
       Phone: ${data.phone}
+      Address: ${data.homeAddress}, ${data.city}, ${data.state} ${data.zipCode}
       
       PET INFORMATION:
       Pet Name: ${data.petName}
