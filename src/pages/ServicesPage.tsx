@@ -14,15 +14,14 @@ const ServicesPage = () => {
       icon: Hand,
       title: "Initial Consultation",
       description:
-        "Comprehensive evaluation and hands-on techniques including massage, joint mobilization, and stretching.",
+        "Comprehensive orthopedic and neurological evaluation utilizing:",
       benefits: [
-        "Pain reduction and relaxation",
-        "Improved circulation",
-        "Enhanced flexibility",
-        "Reduced muscle tension",
+        "Hands-on techniques including massage, joint mobilization, and stretching",
+        "Movement and gait analysis",
+        "Postural assessment",
       ],
       duration: "45-60 minutes",
-      price: "$185",
+      price: "$235",
     },
     {
       icon: Dumbbell,
@@ -30,39 +29,13 @@ const ServicesPage = () => {
       description:
         "Continued therapy with customized exercise programs using specialized equipment and techniques.",
       benefits: [
+        "Pain Relief",
         "Strength building",
         "Balance improvement",
-        "Coordination enhancement",
         "Endurance development",
       ],
       duration: "30-45 minutes",
-      price: "$135",
-    },
-    {
-      icon: MousePointerClick,
-      title: "Dry Needling Visit",
-      description:
-        "Targeted treatment using fine needles to relieve muscle tension and pain.",
-      benefits: [
-        "Reduced muscle tightness",
-        "Improved range of motion",
-        "Enhanced blood flow",
-        "Faster recovery from injuries",
-      ],
-      duration: "30-45 minutes",
-      price: "$150",
-    },
-    {
-      icon: Stethoscope,
-      title: "6-Session Bundle",
-      description:
-        "Packages available for comprehensive pain relief and accelerated healing.",
-      benefits: [
-        "Save $100 when purchasing as a bundle",
-        "Consistent results with regular treatments",
-        "Ideal for chronic pain or post-surgical recovery",
-      ],
-      price: "Starting at $710",
+      price: "$185",
     },
   ];
 
@@ -86,12 +59,14 @@ const ServicesPage = () => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-2 text-center sm:mb-16">
             <h1 className="mb-6 text-4xl font-bold text-gray-900 text-primary lg:text-5xl">
-              Comprehensive Therapy Services
+              Personalized Physical Therapy at Home
             </h1>
             <p className="max-w-3xl mx-auto text-xl leading-relaxed text-gray-600">
-              We offer a complete range of evidence-based physical therapy
-              treatments designed to address your pet's specific needs and
-              rehabilitation goals.
+              Paw Power Rehab provides fully mobile canine rehabilitation
+              services, bringing individualized therapy directly to your home.
+              By treating pets in their everyday environment, we can better
+              evaluate mobility challenges, create customized exercise plans,
+              and support lasting progress between visits.
             </p>
           </div>
         </div>
